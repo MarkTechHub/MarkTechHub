@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkTechHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Gradient Background Animation */
+        header {
+    background: linear-gradient(45deg, red, blue, green, yellow);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite linear;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Spinning Text Animation */
+.moving-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(25, 34, 163, 0.3);
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: textSpin 10s linear infinite;
+}
+
+/* Circular Text Motion */
+@keyframes textSpin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: yellow;
+}
+ 
+/* About Us Section */
+#about {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #858fa5, #206383);
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-text h3 {
+    margin-top: 10px;
+    color: #ffe;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.btn {
+    background: linear-gradient(45deg, red, blue, green, yellow); 
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btn:hover {
+    background: #ffe;
+    color: #333;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-container div {
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer h2, .footer h3 {
+    color: #f8b400;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-social a {
+    display: inline-block;
+    color: white;
+    font-size: 22px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #f8b400;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #555;
+}
+
+    </style>
+</head>
+<body>  
+    <header>
+        <div class="moving-text">About MarkTechHub</div> <!-- Spinning Text -->
+      
+        <div class="logo">
+            <h1>MarkTechHub</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="port.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to <strong>MarkTechHub</strong>, your one-stop hub for innovative technology solutions.</p>
+    
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>MarkTechHub is a team of passionate developers, designers, and marketers committed to building cutting-edge digital solutions. With years of experience, we help businesses grow online.</p>
+    
+                    <h3>Our Mission</h3>
+                    <p>To provide innovative, scalable, and high-quality technology solutions that empower businesses and individuals worldwide.</p><br>
+    
+                    <a href="contact.html" class="btn">Contact Us</a>
+                </div>
+    
+                <div class="about-image">
+                    <img src="image/0.JPG" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sehemu ya Maelezo ya Kampuni -->
+            <div class="footer-about">
+                <h2>MarkTechHub</h2>
+                <p></p>
+            </div>
+    
+            <!-- Links Muhimu -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Mawasiliano -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +255 618 650 098</p>
+                <p><i class="fas fa-envelope"></i> marktechhub@gmail.com</p>
+            </div>
+    
+            <!-- Mitandao ya Kijamii -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

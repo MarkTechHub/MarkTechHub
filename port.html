@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkTechHub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #portfolio {
+    text-align: center;
+    padding: 50px;
+    background: #f8f8f8;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.gallery-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #e55d00;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" >
+            <h1>MarkTechHub</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="port.html">Portfolio</a></li>
+                <li><a href="contact.html">contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="image/1.JPG" alt="Project 1">
+                <h3>Mradi wa Tovuti</h3>
+                <p>Ubunifu wa tovuti ya kisasa, responsive, na yenye UX nzuri.</p>
+                <a href="tovuti.html" class="btn">Tazama Zaidi</a>
+            </div>
+            <div class="gallery-item">
+                <img src="image/pro5.JPG" alt="Project 2">
+                <h3>Ubunifu wa Kibiashara</h3>
+                <p>Ubunifu wa logo, branding na materials za kibiashara.</p>
+                <a href="designed.html" class="btn">Tazama Zaidi</a>
+            </div>
+            <div class="gallery-item">
+                <img src="image/IAZS8238.JPG" alt="Project 3">
+                <h3>App ya Simu</h3>
+                <p>Programu ya simu ya kisasa, rahisi kutumia na yenye features bora.</p>
+                <a href="#" class="btn">Tazama Zaidi</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
+    </footer>
+</body>
+</html>
