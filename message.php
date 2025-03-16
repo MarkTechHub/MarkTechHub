@@ -19,18 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST["message"]);
 
     // Andaa SQL Query
-    $sql = "INSERT INTO messages (name, email, message) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO `form.php` (name, email, message) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $name, $email, $message);
 
-    // Tekeleza na angalia kama imefanikiwa
     if ($stmt->execute()) {
         echo "<script>alert('Ujumbe wako umetumwa kwa mafanikio!'); window.location='index.html';</script>";
     } else {
-        echo "<script>alert('Tatizo limetokea, tafadhali jaribu tena.');</script>";
+        echo "<script>alert('Tatizo limetokea, jaribu tena badae.');</script>";
     }
 
-    // Funga muunganisho
     $stmt->close();
     $conn->close();
 }
