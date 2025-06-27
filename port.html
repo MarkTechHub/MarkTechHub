@@ -6,6 +6,78 @@
     <title>MarkTechHub</title>
     <link rel="stylesheet" href="style.css">
     <style>
+
+header {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      color: white;
+      padding: 15px 20px;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #111;
+        padding: 10px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .hero {
+      background: url('image/hero-bg.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: black;
+      text-align: center;
+    }
+
         #portfolio {
     text-align: center;
     padding: 50px;
@@ -67,18 +139,19 @@
 <body>
 
     <header>
-        <div class="logo" >
-            <h1>MarkTechHub</h1>
+        <div class="logo">
+          <h1>MarkTechHub</h1>
         </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">about us</a></li>
-                <li><a href="port.html">Portfolio</a></li>
-                <li><a href="contact.html">contact us</a></li>
-            </ul>
+          <ul id="nav-links">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="port.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
 
     <section id="portfolio">
         <h2>Portfolio</h2>
