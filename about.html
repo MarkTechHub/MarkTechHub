@@ -11,15 +11,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* Gradient Background Animation */
-        header {
-    background: linear-gradient(45deg, red, blue, green, yellow);
-    background-size: 400% 400%;
-    animation: gradientAnimation 20s infinite linear;
-    padding: 20px;
-    text-align: center;
-    color: white;
-}
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
@@ -48,31 +39,80 @@
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Navigation Styling */
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-}
+header {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      color: white;
+      padding: 15px 20px;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-nav ul li {
-    margin: 0 15px;
-}
+    .logo h1 {
+      font-size: 1.8rem;
+    }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-nav ul li a:hover {
-    color: yellow;
-}
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #111;
+        padding: 10px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+    
+    .hero {
+      background: url('image/hero-bg.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: black;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
  
 /* About Us Section */
 #about {
@@ -216,20 +256,20 @@ nav ul li a:hover {
 </head>
 <body>  
     <header>
-        <div class="moving-text">About MarkTechHub</div> <!-- Spinning Text -->
-      
         <div class="logo">
-            <h1>MarkTechHub</h1>
+          <h1>MarkTechHub</h1>
         </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="port.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+          <ul id="nav-links">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="servies.html">services</a></li>
+            <li><a href="port.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     
     <section id="about">
         <div class="container">
@@ -282,13 +322,17 @@ nav ul li a:hover {
             <!-- Mitandao ya Kijamii -->
             <div class="footer-social">
                 <h3>Follow Us</h3>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.fb.com/l/6l1kJRRR"><i class="fab fa-facebook"></i></a>
+                <a href="https://vm.tiktok.com/ZMSae1FQT/"><i class="fab fa-tiktok"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
-    
+   <script>
+     function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+   </script>
 </body>
 </html>
