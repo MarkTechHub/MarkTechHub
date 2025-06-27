@@ -1,181 +1,328 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
-        <meta property="og:title" content="MarkTechHub | Innovative IT Solutions">
-<meta property="og:description" content="Jukwaa la kiteknolojia kwa wabunifu wa wavuti na IT.">
-<meta property="og:image" content="https://marktechhub.github.io/MarkTechHub/images/logo2.jpg">
-<meta property="og:url" content="https://marktechhub.github.io/MarkTechHub/">
-<meta name="twitter:card" content="summary_large_image">
-
-        <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
-        <meta name="author" content="Mark Martin Mwaitolola">
-        <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
+    <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
+    <meta name="author" content="Mark Martin Mwaitolola">
+    <meta name="robots" content="index, follow">
     <title>MarkTechHub</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
     header {
-    background: linear-gradient(45deg, red, blue, green, yellow);
-    background-size: 400% 400%;
-    animation: gradientAnimation 20s infinite linear;
-    padding: 20px;
-    text-align: center;
-    color: white;
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      color: white;
+      padding: 15px 20px;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #111;
+        padding: 10px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .hero {
+      background: url('image/hero-bg.jpg') center/cover no-repeat;
+      padding: 100px 20px;
+      color: black;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #ff6600;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  
+    .slider-container {
+  width: 100%;
+  max-width: 1080px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
 }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.slider {
+  display: flex;
+  transition: transform 2s ease-in-out;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
 
-nav ul li {
-    margin: 0 15px;
-}
+    section {
+      padding: 60px 20px;
+    }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
 
-nav ul li a:hover {
-    color: yellow;
-}
+    .services-container, .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-#portfolio {
-    text-align: center;
-    padding: 50px;
-    background: #f8f8f8;
-}
+    .service-box, .gallery-item {
+      background: rgb(82, 114, 145);
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-.gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+    .service-box img, .gallery-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
 
-.gallery-item {
-    width: 300px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
+    .btn {
+      background: #ff6600;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-}
+    #contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
 
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
-}
+    #contact input, #contact textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-.gallery-item h3 {
-    font-size: 20px;
-    margin: 10px 0;
-}
+    #contact button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.gallery-item p {
-    font-size: 14px;
-    color: #555;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #ff6600;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #e55d00;
-}
-
-.cta-button {
-    background: linear-gradient(45deg, red, blue, green, yellow); 
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-}
-
-    </style>
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-<body>  
-    <header>
-        <div class="logo" >
-            <h1>MarkTechHub</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">about </a></li>
-                <li><a href="port.html">Portfolio</a></li>
-                <li><a href="contact.html">contact us</a></li>
-            </ul>
-        </nav>
-    </header>
+<body>
 
-    <section id="home">
-        <div class="hero">
-            <h2>Welcome to MarkTechHub</h2>
-            <p>Tovuti ya kutangaza ujuzi wangu katika teknolojia ya mtandao na michoro ya kisasa.</p>
-            <a href="contact.html" class="cta-button">Contact Us</a>
-        </div>
-    </section>
+  <header>
+    <div class="logo">
+      <h1>MarkTechHub</h1>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about us</a></li>
+        <li><a href="servies.html">services</a></li>
+        <li><a href="port.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Hapa ni mahali ambapo utaweza kujua zaidi kuhusu huduma zangu, ujuzi wangu katika web design, graphic design, na teknolojia ya kisasa.</p>
-    </section>
+  <section class="hero" id="home">
+    <h2>Karibu MarkTechHub</h2>
+    <p>Huduma bora za web design, graphic design na utengenezaji wa apps.</p>
+    <a href="contact.html" class="cta-button">Wasiliana Nasi</a>
+  </section>
 
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="image/logo2.jpg" alt="Project 1">
-                <h3>Mradi wa Tovuti</h3>
-                <p>Ubunifu wa tovuti ya kisasa, responsive, na yenye UX nzuri.</p>
-                <a href="tovuti.html" class="btn">Tazama Zaidi</a>
-            </div>
-            <div class="gallery-item">
-                <img src="image/logo3.jpg" alt="Project 2">
-                <h3>Ubunifu wa Kibiashara</h3>
-                <p>Ubunifu wa logo, branding na materials za kibiashara.</p>
-                <a href="designed.html" class="btn">Tazama Zaidi</a>
-            </div>
-            <div class="gallery-item">
-                <img src="image/logo4.jpg" alt="Project 3">
-                <h3>App ya Simu</h3>
-                <p>Programu ya simu ya kisasa, rahisi kutumia na yenye features bora.</p>
-                <a href="#" class="btn">Tazama Zaidi</a>
-            </div>
-        </div>
-    </section>
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <img src="image2/maintain.jpg" width="1080" height="500" alt="Slide 1">
+      <img src="image2/POSTER 3.jpg" width="1080" height="500" alt="Slide 2">
+      <img src="image2/POSTER FF.jpg" width="1080" height="500" alt="Slide 3">
+    </div>
+  </div>
+  
+  
 
-   
-    <footer>
-        <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
-    </footer>
+  <section id="about">
+    <h2>Kuhusu Sisi</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+      MarkTechHub ni jukwaa la kisasa linalotoa huduma za kiteknolojia kama vile web design, graphic design, na utengenezaji wa apps.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Huduma Zetu</h2>
+    <div class="services-container">
+      <div class="service-box">
+        <img src="image2/poster.jpg" alt="Web Design">
+        <h3>Web Design</h3>
+        <p>Tunatengeneza tovuti zinazofanya kazi vizuri kwenye vifaa vyote.</p>
+      </div>
+      <div class="service-box">
+        <img src="image2/MY LOGO.png" alt="Graphic Design">
+        <h3>Graphic Design</h3>
+        <p>Logo, business cards, posters, na branding nzima ya biashara yako.</p>
+      </div>
+      <div class="service-box">
+        <img src="image2/poster 4.jpg" alt="App Development">
+        <h3>App Development</h3>
+        <p>Tunatengeneza apps za simu na software kulingana na mahitaji yako.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="image2/poster.jpg" alt="Project">
+        <h3>Tovuti ya Kisasa</h3>
+        <p>Responsive design & UX bora.</p>
+        <a href="hubby/index.html" class="btn">Tazama Zaidi</a>
+      </div>
+      <div class="gallery-item">
+        <img src="image2/MY LOGO.png" alt="Project">
+        <h3>Logo & Branding</h3>
+        <p>Muonekano bora wa biashara yako.</p>
+        <a href="servises.html" class="btn">Tazama Zaidi</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Wasiliana Nasi</h2>
+    <form onsubmit="return showMessage()">
+      <input type="text" name="name" placeholder="Jina lako" required />
+      <input type="email" name="email" placeholder="Barua pepe" required />
+      <textarea name="message" placeholder="Ujumbe wako" required></textarea>
+      <button type="submit">Tuma Ujumbe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
+  </footer>
+ 
+  <script>
+    const slider = document.getElementById('slider');
+    const slides = slider.getElementsByTagName('img');
+    const totalSlides = slides.length;
+    let index = 0;
+  
+    function showNextSlide() {
+      index = (index + 1) % totalSlides;
+      slider.style.transform = `translateX(-${index * slides[0].width}px)`;
+    }
+  
+    setInterval(showNextSlide, 3000); // slide kila sekunde 5
+  </script>
+  
+  
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+
+    function showMessage() {
+      alert("Ujumbe wako umetumwa kwa mafanikio! Tutawasiliana nawe hivi karibuni.");
+      return false;
+    }
+
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('nav-links');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>

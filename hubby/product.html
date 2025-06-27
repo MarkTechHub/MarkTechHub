@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+          header {
+    background: linear-gradient(45deg, red, rgb(183, 183, 216), green, yellow);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite linear;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f8f8f8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    align-items: center;
+}
+
+.cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+#cart-count {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 14px;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: #ff4500;
+}
+
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.cart-modal button {
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-modal button:hover {
+    background: #ff4500;
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+        }
+        .navbar h1 {
+            color: white;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: linear-gradient(45deg, red, blue, green, yellow);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite linear;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        .footer {
+    background-color: #007bff;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-container div {
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer h2, .footer h3 {
+    color: #f8b400;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-social a {
+    display: inline-block;
+    color: white;
+    font-size: 22px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #f8b400;
+}
+
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #daf01b;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hubby Fashions</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="products-container">
+        <div class="product" data-id="1" data-name="Trendy T-shirt" data-price="20">
+            <img src="image/tishet.jfif" width="300px" height="300px" alt="T-shirt">
+            <h3>Trendy T-shirt</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2" data-name="Classic Sneakers" data-price="45">
+            <img src="image/ga10.jfif" width="300px" height="300px" alt="Sneakers">
+            <h3>Classic Sneakers</h3>
+            <p>$45.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/jinsi.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/fuul.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section class="products-container">
+        <div class="product" data-id="1" data-name="Trendy T-shirt" data-price="20">
+            <img src="image/ga8.jfif" width="300px" height="300px" alt="T-shirt">
+            <h3>Trendy T-shirt</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2" data-name="Classic Sneakers" data-price="45">
+            <img src="image/gauni1.jfif" width="300px" height="300px" alt="Sneakers">
+            <h3>Classic Sneakers</h3>
+            <p>$45.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/sut.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/tsh.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section class="products-container">
+        <div class="product" data-id="1" data-name="Trendy T-shirt" data-price="20">
+            <img src="image/t.jfif" width="300px" height="300px" alt="T-shirt">
+            <h3>Trendy T-shirt</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2" data-name="Classic Sneakers" data-price="45">
+            <img src="image/b.jfif" width="300px" height="300px" alt="Sneakers">
+            <h3>Classic Sneakers</h3>
+            <p>$45.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/14.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/chu.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section class="products-container">
+        <div class="product" data-id="1" data-name="Trendy T-shirt" data-price="20">
+            <img src="image/e.jfif" width="300px" height="300px" alt="T-shirt">
+            <h3>Trendy T-shirt</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2" data-name="Classic Sneakers" data-price="45">
+            <img src="image/d.jfif" width="300px" height="300px" alt="Sneakers">
+            <h3>Classic Sneakers</h3>
+            <p>$45.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/swe.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/sweta.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section class="products-container">
+        <div class="product" data-id="1" data-name="Trendy T-shirt" data-price="20">
+            <img src="image/wou.jfif" width="300px" height="300px" alt="T-shirt">
+            <h3>Trendy T-shirt</h3>
+            <p>$20.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="2" data-name="Classic Sneakers" data-price="45">
+            <img src="image/z.jfif" width="300px" height="300px" alt="Sneakers">
+            <h3>Classic Sneakers</h3>
+            <p>$45.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/sulu1.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+
+        <div class="product" data-id="3" data-name="Denim Jeans" data-price="35">
+            <img src="image/gaun full.jfif" width="300px" height="300px" alt="Jeans">
+            <h3>Denim Jeans</h3>
+            <p>$35.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </section>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+        </script>
+    
+    <div class="cart-modal" id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="toggleCart()">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sehemu ya Maelezo ya Kampuni -->
+            <div class="footer-about">
+                <h2>Hubby Fashions</h2>
+                <p>Your go-to fashion store for trendy and stylish outfits.</p>
+            </div>
+    
+            <!-- Links Muhimu -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Mawasiliano -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +255 767974816</p>
+                <p><i class="fas fa-envelope"></i> hubbyfashion@gmail.com</p>
+            </div>
+    
+            <!-- Mitandao ya Kijamii -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    
+        <!-- Hakimiliki -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hubby Fashions. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

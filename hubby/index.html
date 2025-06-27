@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubby Fashions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+        body{
+            background-color: powderblue;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(45deg, red, blue, green, yellow);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite linear;
+            padding: 15px 20px;
+        }
+        .navbar h1 {
+            color: white;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+        .home {
+            height: 30vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?fashion,clothing') no-repeat center center/cover;
+            color: white;
+            padding: 20px;
+            flex-direction: column;
+        }
+        .cta-button {
+    display: inline-block;
+    background-color: #ff4500;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d63c00;
+}
+
+        .featured-products, .testimonials, .newsletter, .special-offers, .gallery, .contact-form {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .products-container, .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product, .offer, .gallery-item {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+
+        .newsletter {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .newsletter h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .newsletter button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .newsletter button:hover {
+            background: #ff4500;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 16px;
+            color: green;
+            display: none;
+        }
+        .footer {
+            background: linear-gradient(45deg, red, rgb(10, 10, 83), green, rgb(49, 49, 6));
+    background-size: 400% 400%;
+   
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-container div {
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer h2, .footer h3 {
+    color: #f8b400;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-social a {
+    display: inline-block;
+    color: #fff;
+    background: linear-gradient(45deg, red, rgb(188, 219, 11), rgb(230, 142, 11), rgb(7, 59, 233));
+    background-size: 400% 400%;
+    animation: gradientAnimation 2s infinite linear;
+    
+    font-size: 22px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #e61c1c;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #555;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Hubby Fashions</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+    
+    <section id="home" class="home">
+    <div>
+        <h2>Welcome to Hubby Fashions</h2>
+        <p>Discover the latest trends and stylish outfits that match your personality.</p>
+        <a href="product.html" class="cta-button">Shop Now</a>
+    </div>
+</section>
+    
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products-container">
+            <div class="product">👗 Elegant Dress</div>
+            <div class="product">👕 Stylish T-Shirt</div>
+            <div class="product">👜 Trendy Handbag</div>
+        </div>
+    </section>
+    
+    <section class="special-offers">
+        <h2>Special Offers</h2>
+        <div class="products-container">
+            <div class="offer">🔥 50% Off All Jackets</div>
+            <div class="offer">💥 Buy 3 Get 1 Free on T-Shirts</div>
+        </div>
+    </section>
+    
+    <section class="gallery">
+        <h2>Our Fashion Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="image/gaun full.jfif" alt=""></div>
+            <div class="gallery-item"><img src="image/tishet.jfif" alt=""></div>
+            <div class="gallery-item"><img src="image/beg2.jfif" alt=""></div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <p>"Great quality and stylish designs!" - Abby A.</p>
+        <p>"Best shopping experience ever!" - Mark M.</p>
+    </section>
+    
+     <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <input type="email" id="emailInput" placeholder="Enter your email" />
+        <button onclick="subscribe()">Subscribe</button>
+        <p class="message" id="successMessage">Thank you for subscribing!</p>
+    </section>
+
+   
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+
+    
+        function subscribe() {
+            let emailInput = document.getElementById("emailInput");
+            let successMessage = document.getElementById("successMessage");
+
+            // Validate email
+            if (emailInput.value === "" || !emailInput.value.includes("@")) {
+                alert("Please enter a valid email address!");
+                return;
+            }
+
+            // Show success message
+            successMessage.style.display = "block";
+            
+            // Clear input field after subscribing
+            emailInput.value = "";
+
+            // Simulate sending email to the server (for real projects, use AJAX or API call)
+            console.log("Subscribed email:", emailInput.value);
+        }
+    </script><br>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sehemu ya Maelezo ya Kampuni -->
+            <div class="footer-about">
+                <h2>Hubby Fashions</h2>
+                <p>Your go-to fashion store for trendy and stylish outfits.</p>
+            </div>
+    
+            <!-- Links Muhimu -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Mawasiliano -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +255 767974816</p>
+                <p><i class="fas fa-envelope"></i> hubbyfashion@gmail.com</p>
+            </div>
+    
+            <!-- Mitandao ya Kijamii -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    
+        <!-- Hakimiliki -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Hubby Fashions. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

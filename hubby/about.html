@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Hubby fashions</title>
+    <style>
+            @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+      
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(45deg, red, blue, green, yellow);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite linear;
+            padding: 15px 20px;
+        }
+        .navbar h1 {
+            color: white;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        .about-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-text h3 {
+    font-size: 22px;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text li {
+    font-size: 18px;
+    color: #333;
+    margin: 8px 0;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+.footer {
+            background: linear-gradient(45deg, red, rgb(10, 10, 83), green, rgb(49, 49, 6));
+    background-size: 400% 400%;
+   
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-container div {
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer h2, .footer h3 {
+    color: #f8b400;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-social a {
+    display: inline-block;
+    color: #fff;
+    background: linear-gradient(45deg, red, rgb(188, 219, 11), rgb(230, 142, 11), rgb(7, 59, 233));
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s infinite linear;
+    font-size: 22px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #e61c1c;
+}
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #555;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Hubby Fashions</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav> 
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <!-- Sehemu ya Maelezo -->
+            <div class="about-text">
+                <h2>About Hubby Fashions</h2>
+                <p>Hubby Fashions is your go-to fashion store, offering trendy and stylish outfits that match your personality. We believe in quality, affordability, and uniqueness.</p>
+                
+                <h3>Our Mission</h3>
+                <p>To provide high-quality fashion that enhances confidence and style, making every customer feel special.</p>
+    
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>✔ High-Quality Products</li>
+                    <li>✔ Affordable Prices</li>
+                    <li>✔ Fast and Reliable Shipping</li>
+                    <li>✔ Excellent Customer Support</li>
+                </ul>
+            </div>
+    
+            <!-- Sehemu ya Picha -->
+            <div class="about-image">
+                <img src="image/" width="500px" height="600px" alt="About Hubby Fashions">
+            </div>
+        </div>
+    </section>
+   
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sehemu ya Maelezo ya Kampuni -->
+            <div class="footer-about">
+                <h2>Hubby Fashions</h2>
+                <p>Your go-to fashion store for trendy and stylish outfits.</p>
+            </div>
+    
+            <!-- Links Muhimu -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Mawasiliano -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +255 767974816</p>
+                <p><i class="fas fa-envelope"></i> hubbyfashion@gmail.com</p>
+            </div>
+    
+            <!-- Mitandao ya Kijamii -->
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
