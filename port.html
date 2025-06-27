@@ -78,6 +78,11 @@ header {
       text-align: center;
     }
 
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+
         #portfolio {
     text-align: center;
     padding: 50px;
@@ -140,7 +145,7 @@ header {
 
     <header>
         <div class="logo">
-          <h1>MarkTechHub</h1>
+          <img src="image2/MY LOGO.png" width="60" height="60" alt="">
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav>
@@ -177,6 +182,11 @@ header {
         </div>
     </section>
     
+    <script>
+        function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+    </script>
 
     <footer>
         <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
