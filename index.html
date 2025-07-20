@@ -21,6 +21,7 @@
       background-color: #fff;
       color: #222;
       line-height: 1.6;
+      margin: 0;
     }
 
     header {
@@ -33,6 +34,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      animation: spin 20s linear infinite;
+    }
+    @keyframes spin {
+      form {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .logo h1 {
@@ -194,13 +210,63 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    .container {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+      gap: 5px;
+    }
+
+    .profile-box {
+      display: flex;
+      background: rgb(82, 114, 145);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0,1);
+      padding: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .passport {
+      width: 100px;
+      height: 120;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+
+    .details {
+      font: 1;
+      min-width: 180px;
+    }
+
+    .details h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #ed9f03;
+    }
+
+    .details p {
+      margin: 5px 0;
+      color: #f4f4f4;
+    }
+
+    @media (max-width: 480px) {
+      .profil-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .passport {
+        margin: 0 0 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">
-      <img src="image2/MY LOGO.png" width="60" height="60" alt="">
+      <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
@@ -234,6 +300,78 @@
     <p style="max-width: 700px; margin: auto; text-align: center;">
       MarkTechHub ni jukwaa la kisasa linalotoa huduma za kiteknolojia kama vile web design, graphic design, na utengenezaji wa apps.
     </p>
+  
+
+    <div class="container">
+      <div class="profile-box">
+        <img src="image2/MY LOGO.png" alt="image 1" class="passport">
+        <div class="details">
+          <h3>Mark M Mwaitolola</h3>
+          <p>mmmmmmmmmmmmmmmmmmmmmmmmm<br>mmmmmmmmm
+            mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            </p>
+            <p><strong>Phone:</strong>+255 618650098</p>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <img src="image2/MY LOGO.png" alt="image 1" class="passport">
+        <div class="details">
+          <h3>Mark M Mwaitolola</h3>
+          <p>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            mmmmmmmmmmmmmmmmmmmmmm<br>mmmmmmmmmmmmm
+            mmmmmmmmmmmmmm</p>
+            <p><strong>Phone:</strong>+255 618650098</p>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <img src="image2/MY LOGO.png" alt="image 1" class="passport">
+        <div class="details">
+          <h3>Mark M Mwaitolola</h3>
+          <p>mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            </p>
+            <p><strong>Phone:</strong>+255 618650098</p>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <img src="image2/MY LOGO.png" alt="image 1" class="passport">
+        <div class="details">
+          <h3>Mark M Mwaitolola</h3>
+          <p>ssssssssssssssssssssssssssssssssss
+            ssssssssssssssssssssssssssssssssssssss
+            ssssssssssssssssssssssss
+          </p>
+            <p><strong>Phone:</strong>+255 618650098</p>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <img src="image2/MY LOGO.png" alt="image 1" class="passport">
+        <div class="details">
+          <h3>Mark M Mwaitolola</h3>
+          <p>ssssssssssssssssssssssssssssssssss
+            ssssssssssssssssssssssssssssssssssssss
+            ssssssssssssssssssssssss
+          </p>
+            <p><strong>Phone:</strong>+255 618650098</p>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <img src="image2/MY LOGO.png" alt="image 1" class="passport">
+        <div class="details">
+          <h3>Mark M Mwaitolola</h3>
+          <p>ssssssssssssssssssssssssssssssssss
+            ssssssssssssssssssssssssssssssssssssss
+            ssssssssssssssssssssssss
+          </p>
+            <p><strong>Phone:</strong>+255 618650098</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="services">
@@ -277,11 +415,11 @@
 
   <section id="contact">
     <h2>Wasiliana Nasi</h2>
-    <form onsubmit="return showMessage()">
-      <input type="text" name="name" placeholder="Jina lako" required />
-      <input type="email" name="email" placeholder="Barua pepe" required />
-      <textarea name="message" placeholder="Ujumbe wako" required></textarea>
-      <button type="submit">Tuma Ujumbe</button>
+  <form action="https://formspree.io/f/........." method="post">
+      <input type="text" name="name" placeholder="Full Name" required /><br>
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">Send message</button>
     </form>
   </section>
 
