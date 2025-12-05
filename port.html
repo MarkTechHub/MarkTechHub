@@ -162,6 +162,34 @@ nav ul li a {
   }
 }
 
+.photo-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    background: #111;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* GRID YA PICHA KAMA ULIVYOCHORA */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* vibox 3 kila row */
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.photo-box {
+    width: 100%;
+    height: 90px;          /* unaweza kuongeza au kupunguza */
+    background: #ccc;
+    border-radius: 8px;
+}
 
     </style>
 </head>
@@ -205,6 +233,25 @@ nav ul li a {
             </div>
         </div>
     </section>
+
+    <section class="photo-section">
+    <h2 class="title">WELCOME</h2>
+
+    <div class="photo-grid">
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+        <div class="photo-box"></div>
+    </div>
+</section>
+
     
     <script>
         function toggleMenu() {
