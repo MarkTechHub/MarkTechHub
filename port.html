@@ -162,6 +162,11 @@ nav ul li a {
   }
 }
 
+
+/* ===============================
+      PHOTO SECTION (UPDATED)
+================================*/
+
 .photo-section {
     text-align: center;
     padding: 20px;
@@ -176,19 +181,22 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* GRID YA PICHA KAMA ULIVYOCHORA */
+/* GRID YA PICHA */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* vibox 3 kila row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 0 10px;
 }
 
+/* BOX */
 .photo-box {
     width: 100%;
-    height: 90px;          /* unaweza kuongeza au kupunguza */
-    background: #ccc;
+    height: 90px;
     border-radius: 8px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
     </style>
@@ -234,33 +242,56 @@ nav ul li a {
         </div>
     </section>
 
-    <section class="photo-section">
+<!-- ===============================
+      PHOTO SECTION WITH SLIDESHOW
+================================= -->
+
+<section class="photo-section">
     <h2 class="title">WELCOME</h2>
 
     <div class="photo-grid">
-        <div class="photo-box"></div>
-        <div class="photo-box"></div>
-        <div class="photo-box"></div>
 
-        <div class="photo-box"></div>
-        <div class="photo-box"></div>
-        <div class="photo-box"></div>
+        <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+        <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+         <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
 
-        <div class="photo-box"></div>
-        <div class="photo-box"></div>
-        <div class="photo-box"></div>
+        <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+        <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+         <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+
+        <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+        <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+         <div class="photo-box" data-images="image/pro5.JPG,image/pro5.JPG,image/pro5.JPG"></div>
+
     </div>
 </section>
 
     
-    <script>
-        function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('show');
-    }
-    </script>
+<script>
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('show');
+}
 
-    <footer>
-        <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
-    </footer>
+/* ===============================
+     SLIDESHOW FOR PHOTO BOXES
+================================*/
+
+document.querySelectorAll(".photo-box").forEach(box => {
+    let images = box.dataset.images.split(",");
+    let index = 0;
+
+    box.style.backgroundImage = `url(${images[index]})`;
+
+    setInterval(() => {
+        index = (index + 1) % images.length;
+        box.style.backgroundImage = `url(${images[index]})`;
+    }, 3000); // badilika kila sekunde 3
+});
+</script>
+
+<footer>
+    <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
+</footer>
+
 </body>
 </html>
