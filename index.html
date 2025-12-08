@@ -18,12 +18,31 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #fff;
+      background-color: #bcf4f2;
       color: #222;
       line-height: 1.6;
       margin: 0;
     }
 
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            width: 180px;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
     header {
       position: sticky;
       top: 0;
@@ -104,7 +123,7 @@
     }
 
     .hero {
-      background: url('image/hero-bg.jpg') center/cover no-repeat;
+      background: url('image/d.jpg') center/cover no-repeat;
       padding: 100px 20px;
       color: black;
       text-align: center;
@@ -125,6 +144,7 @@
     }
   
     .slider-container {
+      background: url('image/c.jpg') center/cover no-repeat;
   width: 100%;
   max-width: 1080px;
   overflow: hidden;
@@ -134,7 +154,7 @@
 
 .slider {
   display: flex;
-  transition: transform 5s ease-in-out;
+  transition: transform 10s ease-in-out;
 }
 
 
@@ -181,6 +201,7 @@
     }
 
     #contact form {
+      
       max-width: 500px;
       margin: auto;
       display: flex;
@@ -288,7 +309,6 @@ img {
   }
 }
 
-/* Profile Boxes */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -318,13 +338,41 @@ img {
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
+  </header><br>
+     <div class="services-container">
 
-  <section class="hero" id="home">
-    <h2>Karibu MarkTechHub</h2>
-    <p>Huduma bora za web design, graphic design na utengenezaji wa apps.</p>
-    <a href="contact.html" class="cta-button">Wasiliana Nasi</a>
-  </section>
+        <div class="service-box" style="background:rgba(18, 59, 25, 0.788);">
+            Computer Maintenance
+        </div>
+
+        <div class="service-box" style="background:blue,#ed9f03;">
+            Graphics Design
+        </div>
+
+        
+        <div class="service-box" style="background:rgb(226, 195, 18);">
+            Computer Maintenance
+        </div>
+
+        <div class="service-box" style="background:blue;">
+            Graphics Design
+        </div>
+
+        <div class="service-box" style="background:green;">
+            Web Dev & Design
+        </div>
+
+        <div class="service-box" style="background:rgb(249, 144, 193);">
+            System Design
+        </div>
+
+        <div class="service-box" style="background:rgb(6, 179, 179);">
+            Network
+        </div>
+        <div class="service-box" style="background:rgb(171, 8, 152);">
+            Network
+        </div>
+    </div><br><hr>
 
   <div class="slider-container">
     <div class="slider" id="slider">
@@ -332,8 +380,8 @@ img {
       <img src="image2/POSTER 3.jpg" width="1080" height="500" alt="Slide 2">
       <img src="image2/POSTER FF.jpg" width="1080" height="500" alt="Slide 3">
     </div>
-  </div>
-
+  </div><hr>
+  
   <section id="services">
     <h2>Huduma Zetu</h2>
     <div class="services-container">
@@ -379,7 +427,7 @@ img {
       <input type="text" name="name" placeholder="Full Name" required /><br>
       <input type="email" name="email" placeholder="Email" required />
       <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send to</button>
+      <button type="submit">Send message</button>
     </form>
   </section>
 
@@ -424,3 +472,5 @@ setInterval(showNextSlide, 3000);
   </script>
 </body>
 </html>
+
+
