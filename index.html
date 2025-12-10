@@ -2,15 +2,15 @@
 <html lang="sw">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
-    <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
-    <meta name="author" content="Mark Martin Mwaitolola">
-    <meta name="robots" content="index, follow">
-    <title>MarkTechHub</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
+  <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
+  <meta name="author" content="Mark Martin Mwaitolola">
+  <meta name="robots" content="index, follow">
+  <title>MarkTechHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    * {
+   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -108,9 +108,10 @@
       nav ul {
         flex-direction: column;
         gap: 10px;
-        background: #111;
+        background: #0c818e;
         padding: 10px;
         display: none;
+        text-align: right;
       }
 
       nav ul.show {
@@ -321,6 +322,56 @@ img {
 }
 
     }
+    .tutorial-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.tutorial-section h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.tutorial-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.box {
+    background: #ffffff;
+    padding: 25px 15px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background: #007bff;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.all {
+    background: #222;
+    color: #fff;
+}
+
+.all:hover {
+    background: #007bff;
+    color: #fff;
+}
+
   </style>
 </head>
 <body>
@@ -332,47 +383,28 @@ img {
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul id="nav-links">
-        <li><a href="index.html">home</a></li>
-        <li><a href="about.html">about us</a></li>
-        <li><a href="port.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-key="home">home</a></li>
+        <li><a href="about.html" data-key="about">about us</a></li>
+        <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <select id="language-switcher">
+          <option value="sw">Swahili</option>
+          <option value="en">English</option>
+        </select>
       </ul>
     </nav>
   </header><br>
-     <div class="services-container">
 
-        <div class="service-box" style="background:rgba(18, 59, 25, 0.788);">
-            Computer Maintenance
-        </div>
-
-        <div class="service-box" style="background:blue,#ed9f03;">
-            Graphics Design
-        </div>
-
-        
-        <div class="service-box" style="background:rgb(226, 195, 18);">
-            Computer Maintenance
-        </div>
-
-        <div class="service-box" style="background:blue;">
-            Graphics Design
-        </div>
-
-        <div class="service-box" style="background:green;">
-            Web Dev & Design
-        </div>
-
-        <div class="service-box" style="background:rgb(249, 144, 193);">
-            System Design
-        </div>
-
-        <div class="service-box" style="background:rgb(6, 179, 179);">
-            Network
-        </div>
-        <div class="service-box" style="background:rgb(171, 8, 152);">
-            Network
-        </div>
-    </div><br><hr>
+  <div class="services-container">
+    <div class="service-box" style="background:rgba(18, 59, 25, 0.788);" data-key="service_data_entry">Data entry</div>
+    <div class="service-box" style="background:blue,#ed9f03;" data-key="service_graphics">Graphics Design</div>
+    <div class="service-box" style="background:rgb(226, 195, 18);" data-key="service_troubleshooting">Computer troubleshooting</div>
+    <div class="service-box" style="background:blue;" data-key="service_graphics2">Graphics Design</div>
+    <div class="service-box" style="background:green;" data-key="service_webdev">Web Development & Design</div>
+    <div class="service-box" style="background:rgb(249, 144, 193);" data-key="service_sad">System analysis & Design</div>
+    <div class="service-box" style="background:rgb(6, 179, 179);" data-key="service_network">Computer Network</div>
+    <div class="service-box" style="background:rgb(171, 8, 152);" data-key="service_network_install">Network installation</div>
+  </div><br><hr>
 
   <div class="slider-container">
     <div class="slider" id="slider">
@@ -383,83 +415,85 @@ img {
   </div><hr>
   
   <section id="services">
-    <h2>Huduma Zetu</h2>
+    <h2 data-key="services_title">Huduma Zetu</h2>
     <div class="services-container">
       <div class="service-box">
         <img src="image2/poster.jpg" alt="Web Design">
-        <h3>Web Design</h3>
-        <p>Tunatengeneza tovuti zinazofanya kazi vizuri kwenye vifaa vyote.</p>
+        <h3 data-key="service_web_title">Web Design</h3>
+        <p data-key="service_web">Tunatengeneza tovuti zinazofanya kazi vizuri kwenye vifaa vyote.</p>
       </div>
       <div class="service-box">
         <img src="image2/poster 4.jpg" alt="Graphic Design">
-        <h3>Graphic Design</h3>
-        <p>Logo, business cards, posters, na branding nzima ya biashara yako.</p>
+        <h3 data-key="service_graphic_title">Graphic Design</h3>
+        <p data-key="service_graphic">Logo, business cards, posters, na branding nzima ya biashara yako.</p>
       </div>
       <div class="service-box">
         <img src="image2/MY LOGO.png" alt="App Development">
-        <h3>App Development</h3>
-        <p>Tunatengeneza apps za simu na software kulingana na mahitaji yako.</p>
+        <h3 data-key="service_app_title">App Development</h3>
+        <p data-key="service_app">Tunatengeneza apps za simu na software kulingana na mahitaji yako.</p>
       </div>
     </div>
   </section>
+<section class="tutorial-section">
+    <h2>Study for Tutorials</h2>
+
+    <div class="tutorial-boxes">
+        <a href="html-vscode.html" class="box">HTML/CSS Code</a>
+        <a href="graphics-design.html" class="box">Graphics Design</a>
+        <a href="network-computer.html" class="box">Network / Computer</a>
+        <a href="all-services.html" class="box all">All Services</a>
+    </div>
+</section>
 
   <section id="portfolio">
-    <h2>Portfolio</h2>
+    <h2 data-key="portfolio_title">Portfolio</h2>
     <div class="gallery">
       <div class="gallery-item">
         <img src="image2/poster.jpg" alt="Project">
-        <h3>Tovuti ya Kisasa</h3>
-        <p>Responsive design & UX bora.</p>
-        <a href="hubby/index.html" class="btn">Tazama Zaidi</a>
+        <h3 data-key="project1_title">Tovuti ya Kisasa</h3>
+        <p data-key="project1_desc">Responsive design & UX bora.</p>
+        <a href="hubby/index.html" class="btn" data-key="project1_btn">Tazama Zaidi</a>
       </div>
       <div class="gallery-item">
         <img src="image2/MY LOGO.png" alt="Project">
-        <h3>Logo & Branding</h3>
-        <p>Muonekano bora wa biashara yako.</p>
-        <a href="port.html" class="btn">Tazama Zaidi</a>
+        <h3 data-key="project2_title">Logo & Branding</h3>
+        <p data-key="project2_desc">Muonekano bora wa biashara yako.</p>
+        <a href="port.html" class="btn" data-key="project2_btn">Tazama Zaidi</a>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Wasiliana Nasi</h2>
-  <form action="https://formspree.io/f/mnnzjbqg" method="post">
-      <input type="text" name="name" placeholder="Full Name" required /><br>
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send message</button>
+    <h2 data-key="contact_title">Wasiliana Nasi</h2>
+    <form action="https://formspree.io/f/mnnzjbqg" method="post">
+      <input type="text" name="name" placeholder="Full Name" data-key="contact_name" required /><br>
+      <input type="text" name="email" placeholder="Email/phone number" data-key="contact_email"/>
+      <textarea name="message" placeholder="Message" data-key="contact_message" required></textarea>
+      <button type="submit" data-key="contact_button">Send message</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
+    <p>&copy; 2025-2026 MarkTechHub.get free for christmas offer.</p>
   </footer>
  
   <script>
-   const slider = document.getElementById('slider');
-const slides = slider.getElementsByTagName('img');
-let index = 0;
+    const slider = document.getElementById('slider');
+    const slides = slider.getElementsByTagName('img');
+    let index = 0;
 
-function showNextSlide() {
-  index = (index + 1) % slides.length;
-  const slideWidth = slides[0].offsetWidth; // responsive width
-  slider.style.transform = `translateX(-${index * slideWidth}px)`;
-}
+    function showNextSlide() {
+      index = (index + 1) % slides.length;
+      const slideWidth = slides[0].offsetWidth;
+      slider.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
 
-setInterval(showNextSlide, 3000);
-
+    setInterval(showNextSlide, 3000);
   </script>
-  
-  
 
   <script>
     function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('show');
-    }
-
-    function showMessage() {
-      alert("Ujumbe wako umetumwa kwa mafanikio! Tutawasiliana nawe hivi karibuni.");
-      return false;
     }
 
     document.addEventListener('click', function (e) {
@@ -470,7 +504,28 @@ setInterval(showNextSlide, 3000);
       }
     });
   </script>
+
+  <!-- Language Switcher Script -->
+  <script>
+    const languageSwitcher = document.getElementById('language-switcher');
+
+    async function loadLanguage(lang) {
+      const res = await fetch(`languages/${lang}.json`);
+      const data = await res.json();
+
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if(data[key]) el.textContent = data[key];
+      });
+    }
+
+    languageSwitcher.addEventListener('change', (e) => {
+      loadLanguage(e.target.value);
+    });
+
+    // Load default language
+    loadLanguage(languageSwitcher.value);
+  </script>
+
 </body>
 </html>
-
-

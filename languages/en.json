@@ -1,0 +1,15 @@
+{
+  "home": "home",
+  "about": "about us",
+  "portfolio": "Portfolio",
+  "contact": "Contact",
+  "services_title": "Our Services",
+  "service_web": "We create websites that work well on all devices.",
+  "service_graphic": "Logo, business cards, posters, and full branding for your business.",
+  "service_app": "We create mobile apps and software based on your requirements.",
+  "contact_title": "Contact Us",
+  "contact_name": "Full Name",
+  "contact_email": "Email/phone number",
+  "contact_message": "Message",
+  "contact_button": "Send Message"
+}
