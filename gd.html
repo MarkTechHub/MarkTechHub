@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
+    <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
+    <meta name="author" content="Mark Martin Mwaitolola">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <title>Graphics Design Tutorials</title>
 <style>
     body {
@@ -10,6 +16,73 @@
         margin: 0;
         padding: 0;
         background: #f4f4f4;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #111;
+      color: white;
+      padding: 15px 20px;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      animation: spin 20s linear infinite;
+    }
+        .logo h1 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: #111;
+        padding: 10px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
     .container {
         display: grid;
@@ -87,6 +160,21 @@
 </style>
 </head>
 <body>
+<header>
+        <div class="logo">
+            <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
+          </div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+          <ul id="nav-links">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li><a href="port.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
 <div class="container">
     <!-- Left Video List -->
     <div class="video-list">
