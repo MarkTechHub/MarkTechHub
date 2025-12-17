@@ -370,6 +370,86 @@ img {
     background: #007bff;
     color: #fff;
 }
+/* FLOATING ICON */
+#techAssistantBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* POPUP */
+.assistant {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background: #020617;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HEADER */
+.assistant-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: #0f172a;
+  border-radius: 12px 12px 0 0;
+}
+
+/* BODY */
+.assistant-body {
+  padding: 15px;
+}
+
+.assistant-body input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.assistant-body button {
+  width: 100%;
+  padding: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#assistantResults {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.result-item {
+  margin-bottom: 8px;
+}
+
+.result-item a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
 
   </style>
 </head>
@@ -392,18 +472,30 @@ img {
         </select>
       </ul>
     </nav>
-  </header><br>
+  </header>
 
-  <div class="services-container">
-    <div class="service-box" style="background:rgba(18, 59, 25, 0.788);" data-key="service_data_entry">Data entry</div>
-    <div class="service-box" style="background:blue,#ed9f03;" data-key="service_graphics">Graphics Design</div>
-    <div class="service-box" style="background:rgb(226, 195, 18);" data-key="service_troubleshooting">Computer troubleshooting</div>
-    <div class="service-box" style="background:blue;" data-key="service_graphics2">Graphics Design</div>
-    <div class="service-box" style="background:green;" data-key="service_webdev">Web Development & Design</div>
-    <div class="service-box" style="background:rgb(249, 144, 193);" data-key="service_sad">System analysis & Design</div>
-    <div class="service-box" style="background:rgb(6, 179, 179);" data-key="service_network">Computer Network</div>
-    <div class="service-box" style="background:rgb(171, 8, 152);" data-key="service_network_install">Network installation</div>
-  </div><br><hr>
+<!-- FLOATING ICON -->
+<div id="techAssistantBtn">💬</div>
+
+<!-- POPUP -->
+<div id="techAssistant" class="assistant hidden">
+  <div class="assistant-header">
+    <span>Ask Technology</span>
+    <button onclick="toggleAssistant()">✖</button>
+  </div>
+
+  <div class="assistant-body">
+    <input 
+      type="text" 
+      id="questionInput"
+      placeholder="What do you want to know about technology?"
+    />
+    <button onclick="askTech()">Ask</button>
+
+    <div id="assistantResults"></div>
+  </div>
+</div>
+
 
   <div class="slider-container">
     <div class="slider" id="slider">
@@ -525,6 +617,82 @@ img {
     // Load default language
     loadLanguage(languageSwitcher.value);
   </script>
+<script>
+const btn = document.getElementById("techAssistantBtn");
+const assistant = document.getElementById("techAssistant");
+
+btn.onclick = toggleAssistant;
+
+function toggleAssistant() {
+  assistant.classList.toggle("hidden");
+}
+
+async function askTech() {
+  const q = document.getElementById("questionInput").value.trim();
+  const results = document.getElementById("assistantResults");
+
+  if (q.length < 3) return;
+
+  results.innerHTML = "Searching...";
+
+  const url = `https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${q}&limit=5&format=json`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    results.innerHTML = "";
+
+    data[1].forEach((title, i) => {
+      results.innerHTML += `
+        <div class="result-item">
+          <a href="${data[3][i]}" target="_blank">${title}</a>
+        </div>
+      `;
+    });
+  } catch {
+    results.innerHTML = "Error fetching data.";
+  }
+}
+</script>
+<script>
+const btn = document.getElementById("techAssistantBtn");
+const assistant = document.getElementById("techAssistant");
+
+btn.onclick = toggleAssistant;
+
+function toggleAssistant() {
+  assistant.classList.toggle("hidden");
+}
+
+async function askTech() {
+  const q = document.getElementById("questionInput").value.trim();
+  const results = document.getElementById("assistantResults");
+
+  if (q.length < 3) return;
+
+  results.innerHTML = "Searching...";
+
+  const url = `https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${q}&limit=5&format=json`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    results.innerHTML = "";
+
+    data[1].forEach((title, i) => {
+      results.innerHTML += `
+        <div class="result-item">
+          <a href="${data[3][i]}" target="_blank">${title}</a>
+        </div>
+      `;
+    });
+  } catch {
+    results.innerHTML = "Error fetching data.";
+  }
+}
+</script>
 
 </body>
 </html>
