@@ -627,69 +627,44 @@ function toggleAssistant() {
   assistant.classList.toggle("hidden");
 }
 
+/* Safisha swali */
+function extractKeyword(question) {
+  return question
+    .toLowerCase()
+    .replace(/maana ya|ni nini|what is|define|meaning of|explain/gi, "")
+    .trim();
+}
+
 async function askTech() {
-  const q = document.getElementById("questionInput").value.trim();
+  const input = document.getElementById("questionInput");
   const results = document.getElementById("assistantResults");
 
-  if (q.length < 3) return;
+  let question = input.value.trim();
+  if (question.length < 3) return;
 
-  results.innerHTML = "Searching...";
+  const keyword = extractKeyword(question);
 
-  const url = `https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${q}&limit=5&format=json`;
+  results.innerHTML = "⏳ Natafuta jibu...";
+
+  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(keyword)}`;
 
   try {
     const res = await fetch(url);
     const data = await res.json();
 
-    results.innerHTML = "";
+    if (data.type === "https://mediawiki.org/wiki/HyperSwitch/errors/not_found") {
+      results.innerHTML = "❌ Hakuna jibu lililopatikana. Jaribu swali jingine.";
+      return;
+    }
 
-    data[1].forEach((title, i) => {
-      results.innerHTML += `
-        <div class="result-item">
-          <a href="${data[3][i]}" target="_blank">${title}</a>
-        </div>
-      `;
-    });
-  } catch {
-    results.innerHTML = "Error fetching data.";
-  }
-}
-</script>
-<script>
-const btn = document.getElementById("techAssistantBtn");
-const assistant = document.getElementById("techAssistant");
-
-btn.onclick = toggleAssistant;
-
-function toggleAssistant() {
-  assistant.classList.toggle("hidden");
-}
-
-async function askTech() {
-  const q = document.getElementById("questionInput").value.trim();
-  const results = document.getElementById("assistantResults");
-
-  if (q.length < 3) return;
-
-  results.innerHTML = "Searching...";
-
-  const url = `https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=${q}&limit=5&format=json`;
-
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    results.innerHTML = "";
-
-    data[1].forEach((title, i) => {
-      results.innerHTML += `
-        <div class="result-item">
-          <a href="${data[3][i]}" target="_blank">${title}</a>
-        </div>
-      `;
-    });
-  } catch {
-    results.innerHTML = "Error fetching data.";
+    results.innerHTML = `
+      <div style="font-size:14px;line-height:1.6;color:#e5e7eb">
+        <strong>${data.title}</strong><br><br>
+        ${data.extract}
+      </div>
+    `;
+  } catch (error) {
+    results.innerHTML = "⚠️ Tatizo la mtandao. Tafadhali jaribu tena.";
   }
 }
 </script>
