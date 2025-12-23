@@ -4,9 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Tutorials</title>
+    <style>
+        body{
+  font-family: Arial, sans-serif;
+}
+
+/* Chat Icon */
+.chat-icon{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0a66c2;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Chat Box */
+.chat-box{
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-width: 90%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  display: none;
+  flex-direction: column;
+}
+
+/* Header */
+.chat-header{
+  background: #0a66c2;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+/* Messages */
+.chat-messages{
+  height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Message styles */
+.user-msg{
+  text-align: right;
+  margin-bottom: 8px;
+}
+.bot-msg{
+  text-align: left;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input */
+.chat-input{
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+.chat-input input{
+  flex: 1;
+  border: none;
+  padding: 10px;
+}
+.chat-input button{
+  border: none;
+  background: #0a66c2;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+    </style>
 </head>
 <body>
     <h1>COMMING SOON!</h1>
     <li><a href="index.html" data-key="home"> BACK >home</a></li>
+
+<!-- Chat Icon -->
+<div class="chat-icon" onclick="toggleChat()">💬</div>
+
+<!-- Chat Box -->
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">Technology Group</div>
+
+  <div class="chat-messages" id="messages">
+    <div class="bot-msg">🤖 Karibu Technology Group! Tuandikie ujumbe 😊</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userMsg" placeholder="Andika ujumbe...">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+
+   <script>
+let userName = localStorage.getItem("chatUserName");
+let waitingForName = false;
+let hasWelcomed = localStorage.getItem("hasWelcomed");
+
+/* ===== ON LOAD ===== */
+window.onload = () => {
+  let messages = document.getElementById("messages");
+
+  if(userName){
+    messages.innerHTML += `<div class="bot-msg">🤖 Karibu tena ${userName}! 👋</div>`;
+    hasWelcomed = true;
+    localStorage.setItem("hasWelcomed", "yes");
+  }else{
+    messages.innerHTML += `<div class="bot-msg">🤖 Karibu Technology Group 👋 Unaitwa nani?</div>`;
+    waitingForName = true;
+  }
+};
+
+/* ===== TOGGLE CHAT ===== */
+function toggleChat(){
+  let box = document.getElementById("chatBox");
+  box.style.display = box.style.display === "flex" ? "none" : "flex";
+}
+
+/* ===== SEND MESSAGE ===== */
+function sendMessage(){
+  let input = document.getElementById("userMsg");
+  let msg = input.value.trim();
+  if(msg === "") return;
+
+  let messages = document.getElementById("messages");
+
+  messages.innerHTML += `<div class="user-msg">🧑 ${msg}</div>`;
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
+
+  /* ===== CAPTURE NAME ONCE ===== */
+  if(waitingForName){
+    userName = msg;
+    localStorage.setItem("chatUserName", userName);
+    waitingForName = false;
+
+    setTimeout(() => {
+      messages.innerHTML += `<div class="bot-msg">🤖 Asante ${userName}! 😊 Naweza kukusaidia kwa chochote.</div>`;
+      messages.scrollTop = messages.scrollHeight;
+    }, 2000);
+    return;
+  }
+
+  setTimeout(() => {
+    botReply(messages, msg);
+  }, 2000);
+}
+
+/* ===== BOT REPLY ===== */
+function botReply(messages, userText){
+  let text = userText.toLowerCase();
+  let reply = "";
+
+  /* ---- HABARI (ONLY ONCE) ---- */
+  if(text.includes("habari","hello") && !hasWelcomed){
+    reply = `🤖 Habari ${userName}! Karibu sana 👋`;
+    hasWelcomed = true;
+    localStorage.setItem("hasWelcomed", "yes");
+  }
+  else if(text.includes("msaada","unaweza nisaidia")){
+    reply = `🤖 ${userName}, nipo hapa kukusaidia 😊 Uniambie unahitaji msaada gani.`;
+  }
+  else if(text.includes("wewe nani","huduma")){
+    reply = `🤖 ${userName}, tunatoa Web Design, Graphic Design, IT Support na App Development.`;
+  }
+  else if(text.includes("bei") || text.includes("gharama")){
+    reply = `🤖 ${userName}, bei hutegemea aina ya huduma. Tafadhali eleza unachohitaji.`;
+  }
+  else if(text.includes("asante")){
+    reply = `🤖 Karibu sana ${userName} 🙌`;
+  }
+  else{
+    reply = `🤖 Nimekuelewa ${userName} 👍 bonyeza sehemu ya home kisha chati unaweza uliza swali lolote.`;
+  }
+
+  messages.innerHTML += `<div class="bot-msg">${reply}</div>`;
+  messages.scrollTop = messages.scrollHeight;
+}
+</script>
+
+
 </body>
 </html>
