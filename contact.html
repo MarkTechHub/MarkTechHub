@@ -9,151 +9,9 @@
   <meta name="robots" content="index, follow">
   <title>MarkTechHub</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
     <style>
-        body{
-            background-color: rgb(135, 198, 237);
-            background-size: 400% 400%;
-             
-        }
 
-      
-    header {
-      position: sticky;
-      top: 0;
-      background-color: #111;
-      color: white;
-      padding: 15px 20px;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50px;
-      animation: spin 20s linear infinite;
-    }
-    @keyframes spin {
-      form {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .logo h1 {
-      font-size: 1.8rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      color: #ff6600;
-    }
-
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      color: white;
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        background: #111;
-        padding: 10px;
-        display: none;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    .hero {
-      background: url('image/hero-bg.jpg') center/cover no-repeat;
-      padding: 100px 20px;
-      color: black;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-    }
-
-         .contact-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-
-        .contact-info {
-            max-width: 400px;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-        }
-
-        .contact-info h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #007bff;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-            margin: 10px 0;
-            color: #555;
-        }
-
-        .social-links {
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            font-size: 22px;
-            color: #007bff;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #ff4500;
-        }
 
     </style>
 </head>
@@ -174,6 +32,7 @@
   </header>
 
 
+    <h2 data-key="contact_title">Wasiliana Nasi</h2>
     <center><div class="contact-info">
         <h2>Get in Touch</h2>
         <p><i class="fas fa-phone"></i> +255 618 650 098</p>
@@ -185,14 +44,76 @@
             <a href="#"><i class="fab fa-tiktok"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/+255687750098?text=hello+habari+yako"><i class="fab fa-whatsapp"></i></a>
-        </div>
+        </div><hr>
+
+          <section id="contact">
+    <form action="https://formspree.io/f/mnnzjbqg" method="post">
+      <input type="text" name="name" placeholder="Full Name" data-key="contact_name" required /><br>
+      <input type="text" name="email" placeholder="Email/phone number" data-key="contact_email"/>
+      <textarea name="message" placeholder="Message" data-key="contact_message" required></textarea>
+      <button type="submit" data-key="contact_button">Send message</button>
+    </form>
+  </section>
     </div>
+
+
 
     <script>
        function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('show');
     }
     </script>
+
+<script>
+const btn = document.getElementById("techAssistantBtn");
+const assistant = document.getElementById("techAssistant");
+
+btn.onclick = toggleAssistant;
+
+function toggleAssistant() {
+  assistant.classList.toggle("hidden");
+}
+
+function extractKeyword(question) {
+  return question
+    .toLowerCase()
+    .replace(/maana ya|ni nini|what is|importace of|types of|explain|define|meaning of|explain/gi, "")
+    .trim();
+}
+
+async function askTech() {
+  const input = document.getElementById("questionInput");
+  const results = document.getElementById("assistantResults");
+
+  let question = input.value.trim();
+  if (question.length < 3) return;
+
+  const keyword = extractKeyword(question);
+
+  results.innerHTML = "⏳ Natafuta jibu...";
+
+  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(keyword)}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (data.type === "https://mediawiki.org/wiki/HyperSwitch/errors/not_found") {
+      results.innerHTML = "❌ Hakuna jibu lililopatikana. Jaribu swali jingine.";
+      return;
+    }
+
+    results.innerHTML = `
+      <div style="font-size:14px;line-height:1.6;color:#e5e7eb">
+        <strong>${data.title}</strong><br><br>
+        ${data.extract}
+      </div>
+    `;
+  } catch (error) {
+    results.innerHTML = "⚠️ Tatizo la mtandao. Tafadhali jaribu tena.";
+  }
+}
+</script>
 
 </body>
 </html>

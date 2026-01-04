@@ -12,12 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 .moving-text {
     position: absolute;
     top: 50%;
@@ -39,7 +33,7 @@
 header {
       position: sticky;
       top: 0;
-      background-color: #111;
+      background-color: #0c818e;
       color: white;
       padding: 15px 20px;
       z-index: 999;
@@ -100,7 +94,7 @@ header {
       nav ul {
         flex-direction: column;
         gap: 10px;
-        background: #111;
+        background: #bcf4f2;
         padding: 10px;
         display: none;
       }
@@ -122,9 +116,9 @@ header {
     }
 
 #about {
-    background-color: rgb(92, 145, 205);
+    background-color: #fff;
     padding: 60px 20px;
-    color: #fff;
+    color: #333;
     text-align: center;
 }
 
@@ -169,82 +163,9 @@ header {
 
 .about-image img {
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px #bcf4f2;
 }
 
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.footer-container div {
-    margin: 15px;
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer h2, .footer h3 {
-    color: #f8b400;
-    margin-bottom: 15px;
-}
-
-.footer p {
-    font-size: 16px;
-    color: #ddd;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 8px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: #f8b400;
-}
-
-.footer-contact i {
-    margin-right: 8px;
-}
-
-.footer-social a {
-    display: inline-block;
-    color: white;
-    font-size: 22px;
-    margin: 0 8px;
-    transition: 0.3s;
-}
-
-.footer-social a:hover {
-    color: #f8b400;
-}
-
-.footer-bottom {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #555;
-}
 
     </style>
 </head>
@@ -280,7 +201,7 @@ header {
                 </div>
     
                 <div class="about-image">
-                    <img src="image2/team.jpg" width="400" height="250" alt="Our Team">
+                    <img src="image2/2.JPG" width="300" height="250" alt="Our Team">
                 </div>
             </div>
         </div><hr>
@@ -288,7 +209,7 @@ header {
 
             <div class="about-content">
                 <div class="about-image">
-                    <img src="image2/3.JPG" width="400" height="250" alt="Our Team">
+                     <img src="image/0.JPG" width="400" height="250" alt="Our Team">
                 </div>
                 <div class="about-text" style="text-align:center;">
                     <h3>Who We Are</h3>
@@ -317,43 +238,13 @@ header {
                     <img src="image/0.JPG" width="400" height="250" alt="Our Team">
                 </div>
             </div>
-        </div><hr>
+        </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-container">
-           
-            <div class="footer-about">
-                <h2>MarkTechHub</h2>
-                <p></p>
-            </div>
-    
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-phone"></i> +255 618 650 098</p>
-                <p><i class="fab fa-whatsapp"></i>+255 687 750 098</p>
-                <p><i class="fas fa-envelope"></i> markmwaitolola4@gmail.com</p>
-            </div>
+    <footer>
+    <p>&copy;-2026 MarkTechHub.</p>
+  </footer>
   
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <a href="https://www.facebook.com/MARKTECHHUB"><i class="fab fa-facebook"></i></a>
-                <a href="https://vm.tiktok.com/ZMSae1FQT/"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </footer>
    <script>
      function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('show');

@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #bcf4f2;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -110,7 +110,7 @@ form button:hover {
 
 footer {
     text-align: center;
-    background-color: #333;
+    background-color: #0c818e;
     color: rgb(255, 255, 255);
     padding: 20px;
     margin-top: 40px;
