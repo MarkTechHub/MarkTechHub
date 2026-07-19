@@ -1,130 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
-    <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
-    <meta name="author" content="Mark Martin Mwaitolola">
-    <meta name="robots" content="index, follow">
-    <title>MarkTechHub-services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Huduma za MarkTechHub: graphic design, web development, app development, networking, security, na maintenance.">
+  <meta name="keywords" content="MarkTechHub, services, graphic design, web development, app development, networking, security, maintenance">
+  <meta name="author" content="Mark Martin Mwaitolola">
+  <meta name="robots" content="index, follow">
+  <title>MarkTechHub | Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<style>
-    
-   
-    header {
-      position: sticky;
-      top: 0;
-      background-color: #111;
-      color: white;
-      padding: 15px 20px;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50px;
-      animation: spin 20s linear infinite;
-    }
-    @keyframes spin {
-      form {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .logo h1 {
-      font-size: 1.8rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav ul li a:hover {
-      color: #ff6600;
-    }
-
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      color: white;
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        background: #111;
-        padding: 10px;
-        display: none;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    .hero {
-      background: url('image/hero-bg.jpg') center/cover no-repeat;
-      padding: 100px 20px;
-      color: black;
-      text-align: center;
-    }
-
-</style>
-
 <body>
-    <header>
-      <div class="logo">
-        <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
+  <header>
+    <div class="logo">
+      <img src="image2/MY LOGO.png" alt="MarkTechHub logo">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html" data-key="home">home</a></li>
+        <li><a href="about.html" data-key="about">about us</a></li>
+        <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-key="services_title">Services</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li>
+          <select id="language-switcher" aria-label="Language switcher">
+            <option value="sw">Swahili</option>
+            <option value="en">English</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="section-title">
+      <h2 data-key="services_title">Huduma Zetu</h2>
+      <p class="section-intro" data-key="services_intro">Aina zote za huduma za teknolojia kwa biashara yako zinapatikana hapa.</p>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <i class="fas fa-palette"></i>
+        <h3 data-key="service_graphic_title">Graphic Design</h3>
+        <p data-key="service_graphic_desc">Ubunifu wa chapa, marketing materials, na visuals zinazovutia.</p>
       </div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <nav>
-          <ul id="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about us</a></li>
-            <li><a href="services.html">services</a></li>
-            <li><a href="port.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
+      <div class="hero-card">
+        <i class="fas fa-code"></i>
+        <h3 data-key="service_web_title">Web Development</h3>
+        <p data-key="service_web_desc">Tovuti za biashara, e-commerce, na mfumo wa habari kwa wateja wako.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-mobile-screen-button"></i>
+        <h3 data-key="service_app_title">App Development</h3>
+        <p data-key="service_app_desc">Apps za simu na web za huduma, biashara, na mchakato wa ndani.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-network-wired"></i>
+        <h3 data-key="service_network_title">Networking</h3>
+        <p data-key="service_network_desc">Mitandao ya ofisi, miundombinu ya wireless, na muunganisho salama.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3 data-key="service_security_title">Security</h3>
+        <p data-key="service_security_desc">Ulinzi wa data, kiwango cha usalama, na utambuzi wa hatari za cyber.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-tools"></i>
+        <h3 data-key="service_maintenance_title">Maintenance</h3>
+        <p data-key="service_maintenance_desc">Matengenezo ya web, app, na mifumo ili kila kitu kizunguke bila matatizo.</p>
+      </div>
+    </div>
+  </section>
 
-    <h2>this page is under construction</h2>
-    <li><a href="index.html">Go back</a></li>
-    <script>
-      function toggleMenu() {
-     document.getElementById('nav-links').classList.toggle('show');
-   }
-   </script>
+  <footer>
+    <p data-key="footer_text">&copy; 2026 MarkTechHub.</p>
+  </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
+  <script src="languages/language.js"></script>
 </body>
 </html>

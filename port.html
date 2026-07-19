@@ -1,281 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarkTechHub</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-header {
-  position: sticky;
-  top: 0;
-  background-color:  #0c818e;
-  color: white;
-  padding: 10px 20px;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  width: 55px;
-  height: 55px;
-  border-radius: 50px;
-  animation: spin 20s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    background: #0c818e;
-    padding: 15px;
-    display: none;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-#portfolio {
-  text-align: center;
-  padding: 40px 20px;
-  background: #f8f8f8;
-}
-
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.gallery-item {
-  width: 300px;
-  background: white;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px #0c818e;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 14px #0c818e;
-}
-
-.gallery-item img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-}
-
-.gallery-item h3 {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.gallery-item p {
-  font-size: 14px;
-  color: #555;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #ff6600;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: .3s;
-}
-
-.btn:hover {
-  background: #e55d00;
-}
-
-@media (max-width: 480px) {
-  .gallery-item {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  #portfolio {
-    padding: 20px 10px;
-  }
-
-  .gallery {
-    gap: 15px;
-  }
-
-  .gallery-item h3 {
-    font-size: 18px;
-  }
-
-  .gallery-item p {
-    font-size: 13px;
-  }
-}
-
-.photo-section {
-    text-align: center;
-    padding: 20px;
-}
-
-.title {
-    background: #111;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-/* GRID YA PICHA */
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 0 10px;
-}
-
-/* BOX */
-.photo-box {
-    width: 100%;
-    height: 90px;
-    border-radius: 8px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio za MarkTechHub - miradi ya web, apps, graphics, na design.">
+  <meta name="keywords" content="MarkTechHub, Portfolio, Web Design, App Development, Graphic Design">
+  <meta name="author" content="Mark Martin Mwaitolola">
+  <meta name="robots" content="index, follow">
+  <title>MarkTechHub | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
-    <header>
-      <div class="logo">
-        <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
-      </div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <nav>
-          <ul id="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about us</a></li>
-            <li><a href="port.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="image/1.JPG" alt="Project 1">
-                <h3>Mradi wa Tovuti</h3>
-                <p>Ubunifu wa tovuti ya kisasa, responsive, na yenye UX nzuri.</p>
-                <a href="tovuti.html" class="btn">Tazama Zaidi</a>
-            </div>
-            <div class="gallery-item">
-                <img src="image/pro5.JPG" alt="Project 2">
-                <h3>Ubunifu wa Kibiashara</h3>
-                <p>Ubunifu wa logo, branding na materials za kibiashara.</p>
-                <a href="designed.html" class="btn">Tazama Zaidi</a>
-            </div>
-            <div class="gallery-item">
-                <img src="image2/2.JPG" alt="Project 3">
-                <h3>App ya Simu</h3>
-                <p>Programu ya simu ya kisasa, rahisi kutumia na yenye features bora.</p>
-                <a href="#" class="btn">Tazama Zaidi</a>
-            </div>
-        </div>
-    </section>
-
-<section class="photo-section">
-    <h2 class="title">WELCOME</h2>
-
-    <div class="photo-grid">
-
-        <div class="photo-box" data-images="image/pro5.JPG,image/a.JPG,image/pro8.JPG"></div>
-        <div class="photo-box" data-images="image/pr1.JPG,image/pr2.JPG,image/pro3.JPG"></div>
-         <div class="photo-box" data-images="image/pro3.JPG,image/pro3.JPG,image/pro2.JPG"></div>
-
-        <div class="photo-box" data-images="image/e.JPG,image/pro7.JPG,image/pro2.JPG"></div>
-        <div class="photo-box" data-images="image/pro3.JPG,image/pro5.JPG,image/pro3.JPG"></div>
-         <div class="photo-box" data-images="image/b.JPG,image/pro5.JPG,image/pro5.JPG"></div>
-
-        <div class="photo-box" data-images="image/f.JPG,image/C.JPG,image/E.JPG"></div>
-        <div class="photo-box" data-images="image/b.JPG,image/pro5.JPG,image/pro5.JPG"></div>
-         <div class="photo-box" data-images="image/e.JPG,image/c.JPG,image/b.JPG"></div>
-
+  <header>
+    <div class="logo">
+      <img src="image2/MY LOGO.png" alt="MarkTechHub logo">
     </div>
-</section>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html" data-key="home">home</a></li>
+        <li><a href="about.html" data-key="about">about us</a></li>
+        <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-key="services_title">Services</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li>
+          <select id="language-switcher" aria-label="Language switcher">
+            <option value="sw">Swahili</option>
+            <option value="en">English</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    
-<script>
-function toggleMenu() {
-  document.getElementById('nav-links').classList.toggle('show');
-}
+  <section class="page-hero">
+    <div class="section-title">
+      <h2 data-key="portfolio_title">Portfolio</h2>
+      <p class="section-intro" data-key="portfolio_intro">Angalia baadhi ya miradi tunayounda kwa wateja wetu: web, apps, branding, na digital campaigns.</p>
+    </div>
+  </section>
 
-/* ===============================
-     SLIDESHOW FOR PHOTO BOXES
-================================*/
+  <section class="portfolio-section">
+    <div class="gallery">
+      <div class="gallery-item">
+        <h3 data-key="portfolio_item1_title">Mradi wa Tovuti</h3>
+        <p data-key="portfolio_item1_desc">Ubunifu wa tovuti ya kisasa, responsive, yenye uangalizi wa mtumiaji (UX) bora.</p>
+        <a href="tovuti.html" class="btn" data-key="portfolio_item1_btn">Tazama Zaidi</a>
+      </div>
+      <div class="gallery-item">
+        <h3 data-key="portfolio_item2_title">Branding & Logo</h3>
+        <p data-key="portfolio_item2_desc">Logo, branding, na muundo wa chapa unaoleta uaminifu kwa wateja wako.</p>
+        <a href="designed.html" class="btn" data-key="portfolio_item2_btn">Tazama Zaidi</a>
+      </div>
+      <div class="gallery-item">
+        <h3 data-key="portfolio_item3_title">App Design</h3>
+        <p data-key="portfolio_item3_desc">App za simu na web zenye interface rahisi na utendaji wa hali ya juu.</p>
+        <a href="#" class="btn" data-key="portfolio_item3_btn">Tazama Zaidi</a>
+      </div>
+    </div>
+  </section>
 
-document.querySelectorAll(".photo-box").forEach(box => {
-    let images = box.dataset.images.split(",");
-    let index = 0;
+  <footer>
+    <p data-key="footer_text">&copy; 2026 MarkTechHub.</p>
+  </footer>
 
-    box.style.backgroundImage = `url(${images[index]})`;
-
-    setInterval(() => {
-        index = (index + 1) % images.length;
-        box.style.backgroundImage = `url(${images[index]})`;
-    }, 3000); // badilika kila sekunde 3
-});
-</script>
-
-<footer>
-    <p>&copy; 2025 MarkTechHub. Haki zote zimehifadhiwa.</p>
-</footer>
-
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('show');
+    }
+  </script>
+  <script src="languages/language.js"></script>
 </body>
 </html>

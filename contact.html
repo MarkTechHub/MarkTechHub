@@ -1,119 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="sw">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
-  <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
+  <meta name="description" content="Wasiliana na MarkTechHub kwa huduma za web development, app development, graphics, networking, security na maintenance.">
+  <meta name="keywords" content="MarkTechHub, contact, web design, app development, graphic design, network security, maintenance">
   <meta name="author" content="Mark Martin Mwaitolola">
   <meta name="robots" content="index, follow">
-  <title>MarkTechHub</title>
+  <title>MarkTechHub | Contact</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-    <style>
-
-
-    </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
+      <img src="image2/MY LOGO.png" alt="MarkTechHub logo">
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul id="nav-links">
-        <li><a href="index.html">home</a></li>
-        <li><a href="about.html">about us</a></li>
-        <li><a href="port.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-key="home">home</a></li>
+        <li><a href="about.html" data-key="about">about us</a></li>
+        <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-key="services_title">Services</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li>
+          <select id="language-switcher" aria-label="Language switcher">
+            <option value="sw">Swahili</option>
+            <option value="en">English</option>
+          </select>
+        </li>
       </ul>
     </nav>
   </header>
 
+  <section class="page-hero">
+    <div class="section-title">
+      <h2 data-key="contact_title">Wasiliana Nasi</h2>
+      <p class="section-intro" data-key="contact_intro">Tuma ujumbe kuhusu mradi wako wa website, app, graphic design, network, security au maintenance.</p>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 data-key="contact_heading">Mwili wa huduma na muundo wa kisasa kwa biashara yako</h1>
+        <p data-key="contact_text">Jaza fomu hapa chini au tuma ujumbe kwa haraka. Tupo tayari kukusaidia kuanza mradi mpya au kuboresha kitu kilichopo.</p>
+      </div>
+      <div class="hero-cards">
+        <div class="hero-card">
+          <i class="fas fa-phone"></i>
+          <h3 data-key="contact_phone_title">Simu</h3>
+          <p>+255 618 650 098</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-envelope"></i>
+          <h3 data-key="contact_email_title">Email</h3>
+          <p>markmwaitolola4@gmail.com</p>
+        </div>
+        <div class="hero-card">
+          <i class="fab fa-whatsapp"></i>
+          <h3 data-key="contact_whatsapp_title">WhatsApp</h3>
+          <p>+255 687 750 098</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2 data-key="contact_title">Wasiliana Nasi</h2>
-    <center><div class="contact-info">
-        <h2>Get in Touch</h2>
+  <section class="contact-section">
+    <div class="section-title">
+      <h2 data-key="contact_form_title">Wacha Tuongee</h2>
+      <p class="section-intro" data-key="contact_form_intro">Tuma maelezo ya mradi wako na tutakupatia ushauri wa haraka.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 data-key="contact_info_title">Maelezo ya Mawasiliano</h2>
         <p><i class="fas fa-phone"></i> +255 618 650 098</p>
         <p><i class="fab fa-whatsapp"></i> +255 687 750 098</p>
         <p><i class="fas fa-envelope"></i> markmwaitolola4@gmail.com</p>
-      
-        <div class="social-links">
-            <a href="https://www.facebook.com/MARKTECHHUB"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/+255687750098?text=hello+habari+yako"><i class="fab fa-whatsapp"></i></a>
-        </div><hr>
-
-          <section id="contact">
-    <form action="https://formspree.io/f/mnnzjbqg" method="post">
-      <input type="text" name="name" placeholder="Full Name" data-key="contact_name" required /><br>
-      <input type="text" name="email" placeholder="Email/phone number" data-key="contact_email"/>
-      <textarea name="message" placeholder="Message" data-key="contact_message" required></textarea>
-      <button type="submit" data-key="contact_button">Send message</button>
-    </form>
-  </section>
+      </div>
+      <form action="https://formspree.io/f/mnnzjbqg" method="post">
+        <input type="text" name="name" placeholder="Jina Kamili" data-key-placeholder="contact_name" required />
+        <input type="text" name="email" placeholder="Email / Namba ya simu" data-key-placeholder="contact_email" required />
+        <textarea name="message" placeholder="Ujumbe wako" data-key-placeholder="contact_message" required></textarea>
+        <button type="submit" data-key="contact_button">Tuma Ujumbe</button>
+      </form>
     </div>
+  </section>
 
+  <footer>
+    <p data-key="footer_text">&copy; 2026 MarkTechHub.</p>
+  </footer>
 
-
-    <script>
-       function toggleMenu() {
+  <script>
+    function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('show');
     }
-    </script>
-
-<script>
-const btn = document.getElementById("techAssistantBtn");
-const assistant = document.getElementById("techAssistant");
-
-btn.onclick = toggleAssistant;
-
-function toggleAssistant() {
-  assistant.classList.toggle("hidden");
-}
-
-function extractKeyword(question) {
-  return question
-    .toLowerCase()
-    .replace(/maana ya|ni nini|what is|importace of|types of|explain|define|meaning of|explain/gi, "")
-    .trim();
-}
-
-async function askTech() {
-  const input = document.getElementById("questionInput");
-  const results = document.getElementById("assistantResults");
-
-  let question = input.value.trim();
-  if (question.length < 3) return;
-
-  const keyword = extractKeyword(question);
-
-  results.innerHTML = "⏳ Natafuta jibu...";
-
-  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(keyword)}`;
-
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    if (data.type === "https://mediawiki.org/wiki/HyperSwitch/errors/not_found") {
-      results.innerHTML = "❌ Hakuna jibu lililopatikana. Jaribu swali jingine.";
-      return;
-    }
-
-    results.innerHTML = `
-      <div style="font-size:14px;line-height:1.6;color:#e5e7eb">
-        <strong>${data.title}</strong><br><br>
-        ${data.extract}
-      </div>
-    `;
-  } catch (error) {
-    results.innerHTML = "⚠️ Tatizo la mtandao. Tafadhali jaribu tena.";
-  }
-}
-</script>
-
+  </script>
+  <script src="languages/language.js"></script>
 </body>
 </html>

@@ -1,22 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sw">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
-  <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
+  <meta name="description"
+    content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
+  <meta name="keywords"
+    content="MarkTechHub, Web Design, Logo Design, Graphic Design, businesses card, poster, Programming">
   <meta name="author" content="Mark Martin Mwaitolola">
   <meta name="robots" content="index, follow">
   <title>MarkTechHub</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
- 
 </head>
+
 <body>
 
   <header>
     <div class="logo">
-      <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
+      <img src="image2/MY LOGO.png" alt="MarkTechHub logo" class="logo">
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
@@ -25,124 +28,163 @@
         <li><a href="about.html" data-key="about">about us</a></li>
         <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
         <li><a href="contact.html" data-key="contact">Contact</a></li>
-        <select id="language-switcher">
-          <option value="sw">Swahili</option>
-          <option value="en">English</option>
-        </select>
+        <li>
+          <select id="language-switcher" aria-label="Language switcher">
+            <option value="sw">Swahili</option>
+            <option value="en">English</option>
+          </select>
+        </li>
       </ul>
     </nav>
-  </header><br>
+  </header>
 
-<div id="techAssistantBtn">M</div>
-
-<div id="techAssistant" class="assistant hidden">
-  <div class="assistant-header">
-    <span>Ask Technology</span>
-    <button onclick="toggleAssistant()">✖</button>
-  </div>
-
-  <div class="assistant-body">
-    <input 
-      type="text" 
-      id="questionInput"
-      placeholder="What do you want to know about technology?"
-    />
-    <button onclick="askTech()">Ask</button>
-
-    <div id="assistantResults"></div>
-  </div>
-</div>
-
-
- <section class="products-container">
-        <div class="product" data-id="1" data-name="picture" data-price="20">
-            <img src="image/c.jpg" width="300px" height="300px" alt="T-shirt">
-            <h3></h3>
-            <p></p>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow" data-key="hero_eyebrow">Huduma za Digital Kwa Biashara Yako</span>
+        <h1 data-key="hero_heading">Graphics Design, Web Development, App Development, Networking, Security na
+          Maintenance</h1>
+        <p data-key="hero_text">MarkTechHub inakuletea muonekano wa kisasa, apps zenye nguvu, mitandao salama, na huduma
+          ya kila siku ya teknolojia. Tunaboresha chapa yako na kukulinda kwenye dunia ya digital.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn cta-button" data-key="hero_primary">Anza Mradi</a>
+          <a href="port.html" class="btn secondary-button" data-key="hero_secondary">Angalia Kazi Zetu</a>
         </div>
-
-        <div class="product" data-id="2" data-name="picture" data-price="45">
-            <img src="image2/maintain.jpg" width="300px" height="300px" alt="Sneakers">
-            <h3></h3>
-            <p></p>
-        </div>
-
-        <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image/f.jpg" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-        <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image2/POSTER FF.jpg" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-        <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image/POSTER 1.jpg" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-        <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image/pr1.JPG" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-         <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image/pr3.JPG" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-        <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image/pr3.JPG" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-        <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image2/POSTER 3.jpg" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-         <div class="product" data-id="3" data-name="picture" data-price="35">
-            <img src="image/pr3.JPG" width="300px" height="300px" alt="Jeans">
-            <h3></h3>
-            <p></p>
-        </div>
-
-    </section>
-  
-  <section id="services">
-    <h2 data-key="services_title">Huduma Zetu</h2>
-    <div class="services-container">
-      <div class="service-box">
-        <h3 data-key="service_web_title">Web Design</h3>
-        <p data-key="service_web">Tunatengeneza tovuti zinazofanya kazi vizuri kwenye vifaa vyote.</p>
       </div>
-      <div class="service-box">
-        <h3 data-key="service_graphic_title">Graphic Design</h3>
-        <p data-key="service_graphic">Logo, business cards, posters, na branding nzima ya biashara yako.</p>
-      </div>
-      <div class="service-box">
-        <h3 data-key="service_app_title">App Development</h3>
-        <p data-key="service_app">Tunatengeneza apps za simu na software kulingana na mahitaji yako.</p>
+
+      <div class="hero-cards">
+        <div class="hero-card">
+          <i class="fas fa-palette"></i>
+          <h3 data-key="hero_card_design_title">Graphic Design</h3>
+          <p data-key="hero_card_design_desc">Ubunifu wa logo, posters, na brand identity zinazoleta wateja.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-code"></i>
+          <h3 data-key="hero_card_web_title">Web Development</h3>
+          <p data-key="hero_card_web_desc">Tovuti za kisasa, za mwonekano wa kitaalamu, na zenye utendaji wa haraka.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-mobile-screen-button"></i>
+          <h3 data-key="hero_card_app_title">App Development</h3>
+          <p data-key="hero_card_app_desc">Apps za simu na web zinazoendeleza biashara yako kwa wateja wako.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-network-wired"></i>
+          <h3 data-key="hero_card_network_title">Networking & Security</h3>
+          <p data-key="hero_card_network_desc">Miundombinu ya mtandao iliyopangwa vizuri na ulinzi wa data yako.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-tools"></i>
+          <h3 data-key="hero_card_maintenance_title">Maintenance</h3>
+          <p data-key="hero_card_maintenance_desc">Usaidizi wa mara kwa mara na matengenezo ya mfumo ili kila kitu
+            kisiweze.</p>
+        </div>
       </div>
     </div>
   </section>
-<section class="tutorial-section">
-    <h2>Study for Tutorials</h2>
+
+  <button id="techAssistantBtn" class="assistant-trigger" title="Ask Site" aria-label="Open AI assistant">As</button>
+
+  <div id="techAssistant" class="assistant hidden" role="dialog" aria-label="AI assistant">
+    <div class="assistant-header">
+      <span data-key="assistant_title">Ask Technology</span>
+      <button onclick="toggleAssistant()" aria-label="Close assistant">✖</button>
+    </div>
+
+    <div class="assistant-body">
+      <input type="text" id="questionInput" placeholder="What do you want to know about technology?"
+        data-key-placeholder="assistant_input">
+      <button onclick="askTech()" data-key="assistant_button">Ask</button>
+
+      <div id="assistantResults"></div>
+    </div>
+  </div>
+
+  <section class="feature-section">
+    <div class="section-title">
+      <h2 data-key="feature_section_title">Huduma Zetu Zinazoleta Matokeo</h2>
+      <p class="section-intro" data-key="feature_section_intro">Tunatoa muundo wa digital unaovutia, mfumo wa web
+        unaoendana na simu, na usalama wa mtandao unaoaminika.</p>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <i class="fas fa-lightbulb"></i>
+        <h3 data-key="feature_card_creative_title">Ubunifu wa Kipekee</h3>
+        <p data-key="feature_card_creative_desc">Graphic design, logo, na brand identity zinazoleta thamani kwa chapa
+          yako.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-globe"></i>
+        <h3 data-key="feature_card_web_title">Web Development</h3>
+        <p data-key="feature_card_web_desc">Tovuti za kisasa, haraka, na nzuri kwenye simu, tablet, na kompyuta.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3 data-key="feature_card_app_title">App Development</h3>
+        <p data-key="feature_card_app_desc">Apps za smartphone na web zinazojengewa uzoefu mzuri wa mtumiaji.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3 data-key="feature_card_security_title">Security & Networking</h3>
+        <p data-key="feature_card_security_desc">Mitandao salama na ulinzi wa data kwa biashara yako kuwa salama
+          mtandaoni.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-tools"></i>
+        <h3 data-key="feature_card_maintenance_title">Maintenance</h3>
+        <p data-key="feature_card_maintenance_desc">Matengenezo, updates, na support ya kiufundi ili mfumo uwe imara
+          kila wakati.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 data-key="services_title">Huduma Zetu</h2>
+    <p class="section-intro" data-key="services_intro">Huduma zetu zinajumuisha web development, graphic design, app
+      development, networking, security, na maintenance kwa biashara yako.</p>
+    <div class="services-container">
+      <div class="service-box">
+        <i class="fas fa-palette"></i>
+        <h3 data-key="service_graphic_title">Graphic Design</h3>
+        <p data-key="service_graphic_desc">Ubunifu wa chapa unaovutia, posters, brochures, na UI/UX inayojibu mahitaji
+          ya soko.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-code"></i>
+        <h3 data-key="service_web_title">Web Development</h3>
+        <p data-key="service_web_desc">Tovuti za kisasa, za e-commerce, na za tathmini ya biashara zinazofanya kazi kwa
+          ufanisi.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-mobile-screen-button"></i>
+        <h3 data-key="service_app_title">App Development</h3>
+        <p data-key="service_app_desc">Apps za simu na browser zenye miundo ya intuitive na uzoefu wa mtumiaji bora.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-network-wired"></i>
+        <h3 data-key="service_network_title">Networking & Security</h3>
+        <p data-key="service_network_desc">Ujenzi wa mtandao, ulinzi wa data, na suluhisho za cyber security
+          zinazoaminika.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-tools"></i>
+        <h3 data-key="service_maintenance_title">Maintenance</h3>
+        <p data-key="service_maintenance_desc">Huduma za matengenezo, upya wa mfumo, na msaada wa teknolojia kwa muda
+          mrefu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tutorial-section">
+    <h2 data-key="tutorial_title">Study for Tutorials</h2>
 
     <div class="tutorial-boxes">
-        <a href="ht.html" class="box">HTML+CSS&script</a>
-        <a href="gd.html" class="box">Graphics Design</a>
-        <a href="cn.html" class="box">Network / Computer</a>
-        <a href="all.html" class="box all">All Services</a>
+      <a href="ht.html" class="box" data-key="tutorial_htmlcss">HTML+CSS&script</a>
+      <a href="gd.html" class="box" data-key="tutorial_graphic">Graphics Design</a>
+      <a href="cn.html" class="box" data-key="tutorial_network">Network / Computer</a>
+      <a href="all.html" class="box all" data-key="tutorial_all">All Services</a>
     </div>
-</section>
+  </section>
 
   <section id="portfolio">
     <h2 data-key="portfolio_title">Portfolio</h2>
@@ -157,33 +199,17 @@
         <p data-key="project2_desc">Muonekano bora wa biashara yako.</p>
         <a href="port.html" class="btn" data-key="project2_btn">Tazama Zaidi</a>
       </div>
-
       <div class="gallery-item">
-        <h3 data-key="project2_title">SYSTEM</h3>
-        <p data-key="project2_desc">System creater.</p>
-        <a href="port.html" class="btn" data-key="project2_btn">Tazama Zaidi</a>
+        <h3 data-key="project3_title">SYSTEM</h3>
+        <p data-key="project3_desc">System creater.</p>
+        <a href="port.html" class="btn" data-key="project3_btn">Tazama Zaidi</a>
       </div>
     </div>
   </section>
 
-
   <footer>
-    <p>&copy;-2026 MarkTechHub.</p>
+    <p data-key="footer_text">&copy;-2026 MarkTechHub.</p>
   </footer>
- 
-  <script>
-    const slider = document.getElementById('slider');
-    const slides = slider.getElementsByTagName('img');
-    let index = 0;
-
-    function showNextSlide() {
-      index = (index + 1) % slides.length;
-      const slideWidth = slides[0].offsetWidth;
-      slider.style.transform = `translateX(-${index * slideWidth}px)`;
-    }
-
-    setInterval(showNextSlide, 3000);
-  </script>
 
   <script>
     function toggleMenu() {
@@ -197,76 +223,112 @@
         nav.classList.remove('show');
       }
     });
-  </script>
 
-  <script>
     const languageSwitcher = document.getElementById('language-switcher');
+    const storedLanguage = localStorage.getItem('preferredLanguage') || 'sw';
+    languageSwitcher.value = storedLanguage;
 
     async function loadLanguage(lang) {
-      const res = await fetch(`languages/${lang}.json`);
-      const data = await res.json();
-
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if(data[key]) el.textContent = data[key];
-      });
+      try {
+        const res = await fetch(`languages/${lang}.json`);
+        const data = await res.json();
+        document.querySelectorAll('[data-key]').forEach(el => {
+          const key = el.getAttribute('data-key');
+          if (data[key]) el.textContent = data[key];
+        });
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-key-placeholder');
+          if (data[key]) el.placeholder = data[key];
+        });
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLanguage', lang);
+      } catch (error) {
+        console.error('Language file not found:', error);
+      }
     }
 
     languageSwitcher.addEventListener('change', (e) => {
       loadLanguage(e.target.value);
     });
 
-    loadLanguage(languageSwitcher.value);
-  </script>
-<script>
-const btn = document.getElementById("techAssistantBtn");
-const assistant = document.getElementById("techAssistant");
+    loadLanguage(storedLanguage);
 
-btn.onclick = toggleAssistant;
+    const btn = document.getElementById('techAssistantBtn');
+    const assistant = document.getElementById('techAssistant');
+    btn.onclick = toggleAssistant;
 
-function toggleAssistant() {
-  assistant.classList.toggle("hidden");
-}
-
-function extractKeyword(question) {
-  return question
-    .toLowerCase()
-    .replace(/maana ya|ni nini|what is|importace of|types of|explain|define|meaning of|explain/gi, "")
-    .trim();
-}
-
-async function askTech() {
-  const input = document.getElementById("questionInput");
-  const results = document.getElementById("assistantResults");
-
-  let question = input.value.trim();
-  if (question.length < 3) return;
-
-  const keyword = extractKeyword(question);
-
-  results.innerHTML = "⏳ Natafuta jibu...";
-
-  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(keyword)}`;
-
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    if (data.type === "https://mediawiki.org/wiki/HyperSwitch/errors/not_found") {
-      results.innerHTML = "❌ Hakuna jibu lililopatikana. Jaribu swali jingine.";
-      return;
+    function toggleAssistant() {
+      assistant.classList.toggle('hidden');
+      if (!assistant.classList.contains('hidden')) {
+        document.getElementById('questionInput').focus();
+      }
     }
 
-    results.innerHTML = `
+    const localAnswers = {
+      sw: {
+        site: 'MarkTechHub ni wakala wa digital anayetoa huduma za graphic design, web development, app development, networking, security, na maintenance. Tovuti hii inaonyesha huduma, portfolio, na njia za kuwasiliana nasi.',
+        website: 'Tovuti hii inaonyesha huduma za MarkTechHub, miradi tuliyowahi kufanya, na jinsi ya kuwasiliana nasi kwa mradi mpya.',
+        contact: 'Unaweza kutuma ujumbe kupitia ukurasa wa Contact au kutumia namba na barua pepe zilizo kwenye tovuti.',
+        tech: 'Teknolojia hapa inamaanisha web development, apps, mitandao salama, na graphic design inayosaidia biashara yako kuwa imara mtandaoni.',
+        fallback: 'Samahani, sijapata jibu. Uliza tena kuhusu tovuti hii au teknolojia.',
+        searching: '⏳ Natafuta jibu...'
+      },
+      en: {
+        site: 'MarkTechHub is a digital agency offering graphic design, web development, app development, networking, security, and maintenance services. This website shows the services, portfolio, and contact details.',
+        website: 'This website showcases MarkTechHub\'s services, project examples, and how to get in touch for a new project.',
+        contact: 'You can send a message using the contact page form or use the phone and email details provided on this website.',
+        tech: 'Technology here means web development, mobile apps, secure networking, and digital design that help businesses succeed online.',
+        fallback: 'Sorry, I did not find an answer. Please ask again about this website or technology.',
+        searching: '⏳ Searching for an answer...'
+      }
+    };
+
+    function getLocalAnswer(question, lang) {
+      question = question.toLowerCase();
+      if (/marktechhub|mark techhub|jina|kampuni|agent|wakala/.test(question)) return localAnswers[lang].site;
+      if (/tovuti|website|site|hii tovuti|home page|ukurasa|mradi|huduma|portfolio|about|services/.test(question)) return localAnswers[lang].website;
+      if (/wasiliana|contact|email|simu|whatsapp|formu/.test(question)) return localAnswers[lang].contact;
+      if (/teknolojia|technology|tech|web|app|mitandao|network|security|design|graphic|maintenance/.test(question)) return localAnswers[lang].tech;
+      return null;
+    }
+
+    async function askTech() {
+      const input = document.getElementById('questionInput');
+      const results = document.getElementById('assistantResults');
+      const language = document.documentElement.lang || 'sw';
+
+      const question = input.value.trim();
+      if (question.length < 3) return;
+
+      const localAnswer = getLocalAnswer(question, language);
+      if (localAnswer) {
+        results.innerHTML = `<div style="font-size:14px;line-height:1.6;color:#e5e7eb">${localAnswer}</div>`;
+        return;
+      }
+
+      results.innerHTML = localAnswers[language].searching;
+      const keyword = extractKeyword(question);
+      const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(keyword)}`;
+
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.type === 'https://mediawiki.org/wiki/HyperSwitch/errors/not_found') {
+          results.innerHTML = `<div style="font-size:14px;line-height:1.6;color:#e5e7eb">${localAnswers[language].fallback}</div>`;
+          return;
+        }
+
+        results.innerHTML = `
       <div style="font-size:14px;line-height:1.6;color:#e5e7eb">
         <strong>${data.title}</strong><br><br>
         ${data.extract}
-      </div>
-    `;
-  } catch (error) {
-    results.innerHTML = "⚠️ Tatizo la mtandao. Tafadhali jaribu tena.";
-  }
-}
-</script>
+      </div>`;
+      } catch (error) {
+        results.innerHTML = `<div style="font-size:14px;line-height:1.6;color:#e5e7eb">${localAnswers[language].fallback}</div>`;
+      }
+    }
+  </script>
 </body>
+
 </html>

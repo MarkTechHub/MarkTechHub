@@ -1,254 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="sw">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MarkTechHub - Jukwaa la kiteknolojia kwa wabunifu na watengenezaji wa wavuti. Pata suluhisho za kisasa za IT.">
-    <meta name="keywords" content="MarkTechHub, Web Design, Logo Design, Graphic Design,businesses card,poster, Programming">
-    <meta name="author" content="Mark Martin Mwaitolola">
-    <meta name="robots" content="index, follow">
-    <title>MarkTechHub</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-
-.moving-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: rgba(25, 34, 163, 0.3);
-    text-transform: uppercase;
-    white-space: nowrap;
-    animation: textSpin 10s linear infinite;
-}
-
-@keyframes textSpin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-header {
-      position: sticky;
-      top: 0;
-      background-color: #0c818e;
-      color: white;
-      padding: 15px 20px;
-      z-index: 999;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50px;
-      animation: spin 20s linear infinite;
-    }
-    @keyframes spin {
-      form {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-
-    .logo h1 {
-      font-size: 1.8rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav ul li a:hover {
-      color: #ff6600;
-    }
-
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      color: white;
-      font-size: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        background: #bcf4f2;
-        padding: 10px;
-        display: none;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-    
-    .hero {
-      background: url('image/hero-bg.jpg') center/cover no-repeat;
-      padding: 100px 20px;
-      color: black;
-      text-align: center;
-    }
-
-#about {
-    background-color: #fff;
-    padding: 60px 20px;
-    color: #333;
-    text-align: center;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.about-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-.about-text {
-  flex: 1 1 300px;
-  min-width: 250px;
-  text-align: left;
-}
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-text {
-    text-align: center;
-  }
-  .about-text p {
-    font-size: 16px;
-  }
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-}
-
-.about-image img {
-    border-radius: 10px;
-    box-shadow: 0 4px 10px #bcf4f2;
-}
-
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="MarkTechHub - Huduma za digital design, web development, app development, networking, security, na maintenance.">
+  <meta name="keywords"
+    content="MarkTechHub, About, Web Design, App Development, Graphic Design, Networking, Security, Maintenance">
+  <meta name="author" content="Mark Martin Mwaitolola">
+  <meta name="robots" content="index, follow">
+  <title>MarkTechHub | About</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>  
-    <header>
-        <div class="logo">
-            <img src="image2/MY LOGO.png"  alt="MarkTechHub logo" class="logo">
-          </div>
-        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-        <nav>
-          <ul id="nav-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">about us</a></li>
-            <li><a href="port.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-    
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Welcome to <strong>MarkTechHub</strong>, your one-stop hub for innovative technology solutions.</p>
-    <hr>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Who We Are</h3>
-                    <p>MarkTechHub is a team of passionate developers, designers, and marketers committed to building cutting-edge digital solutions. With years of experience, we help businesses grow online.</p>
-    
-                    <h3>Our Mission</h3>
-                    <p>To provide innovative, scalable, and high-quality technology solutions that empower businesses and individuals worldwide.</p><br>
-    
-                </div>
-    
-                <div class="about-image">
-                    <img src="image2/2.JPG" width="300" height="250" alt="Our Team">
-                </div>
-            </div>
-        </div><hr>
-        <div class="container">
 
-            <div class="about-content">
-                <div class="about-image">
-                     <img src="image/0.JPG" width="400" height="250" alt="Our Team">
-                </div>
-                <div class="about-text" style="text-align:center;">
-                    <h3>Who We Are</h3>
-                    <p>MarkTechHub is a team of passionate developers, designers, and marketers committed to building cutting-edge digital solutions. With years of experience, we help businesses grow online.</p>
-    
-                    <h3>Our Mission</h3>
-                    <p>To provide innovative, scalable, and high-quality technology solutions that empower businesses and individuals worldwide.</p><br>
-                </div>
-    
-                
-            </div>
-        </div><hr>
-        <div class="container">
+<body>
+  <header>
+    <div class="logo">
+      <img src="image2/MY LOGO.png" alt="MarkTechHub logo">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html" data-key="home">home</a></li>
+        <li><a href="about.html" data-key="about">about us</a></li>
+        <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="services.html" data-key="services_title">Services</a></li>
+        <li><a href="contact.html" data-key="contact">Contact</a></li>
+        <li>
+          <select id="language-switcher" aria-label="Language switcher">
+            <option value="sw">Swahili</option>
+            <option value="en">English</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-            <div class="about-content">
-                
-                <div class="about-text">
-                    <h3>Who We Are</h3>
-                    <p>MarkTechHub is a team of passionate developers, designers, and marketers committed to building cutting-edge digital solutions. With years of experience, we help businesses grow online.</p>
-    
-                    <h3>Our Mission</h3>
-                    <p>To provide innovative, scalable, and high-quality technology solutions that empower businesses and individuals worldwide.</p><br>
-                </div>
-    
-                <div class="about-image">
-                    <img src="image/0.JPG" width="400" height="250" alt="Our Team">
-                </div>
-            </div>
+  <section class="page-hero">
+    <div class="section-title">
+      <h2 data-key="about_title">About MarkTechHub</h2>
+      <p class="section-intro" data-key="about_intro">Tunahudumia biashara na wajasiriamali kwa suluhisho za dijitali
+        zenye ubunifu, kasi, na usalama.</p>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow" data-key="about_eyebrow">Timu ya wataalamu</span>
+        <h1 data-key="about_heading">Tunajenga chapa nzuri, mitandao thabiti, na programu za kisasa kwa wateja wote.
+        </h1>
+        <p data-key="about_text">MarkTechHub ni wakala wa digital unaojumuisha web development, app development, graphic
+          design, networking, security na maintenance. Tunafanya kazi kwa undani ili kukupa bidhaa zinazofanya kazi
+          vizuri, zinazoonekana nzuri, na zinazoleta matokeo.</p>
+        <div class="hero-buttons">
+          <a href="services.html" class="btn" data-key="about_button_services">Huduma Zetu</a>
+          <a href="contact.html" class="btn secondary-button" data-key="about_button_contact">Tuma Ujumbe</a>
         </div>
-    </section>
+      </div>
+      <div class="hero-cards">
+        <div class="hero-card">
+          <i class="fas fa-bullseye"></i>
+          <h3 data-key="about_goal1_title">Malengo yaliyo wazi</h3>
+          <p data-key="about_goal1_desc">Tunaunda mifumo inayolenga kuongeza mauzo, uaminifu na ufanisi wa biashara
+            yako.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-rocket"></i>
+          <h3 data-key="about_goal2_title">Ukuaji wa haraka</h3>
+          <p data-key="about_goal2_desc">Tunatoa maendeleo ya haraka bila kuacha ubora au usalama nyuma.</p>
+        </div>
+        <div class="hero-card">
+          <i class="fas fa-users"></i>
+          <h3 data-key="about_goal3_title">Ushirikiano wa wateja</h3>
+          <p data-key="about_goal3_desc">Tunashirikiana nawe hatua kwa hatua, tukifanya mradi wako uwe rahisi kueleweka.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-    <p>&copy;-2026 MarkTechHub.</p>
+  <section class="about-section">
+    <div class="section-title">
+      <h2 data-key="about_vision_title">Maono Yetu</h2>
+      <p class="section-intro" data-key="about_vision_intro">Kuwa maarufu kwa kutoa teknolojia zinazofaa kwa sasa,
+        zinazoonekana nzuri na zinazoweza kutekelezwa.</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <h3 data-key="about_core_title">Huduma zetu za msingi</h3>
+        <p data-key="about_core_desc">Tunatoa suluhisho za umaliziaji kwa chapa, tovuti, apps, na miundombinu ya
+          mitandao. Kila mradi unapangwa kwa malengo ya biashara yako, uzoefu wa mtumiaji, na ulinzi wa data.</p>
+        <ul>
+          <li data-key="about_list_design">Ubunifu wa mawasiliano ya kidijitali</li>
+          <li data-key="about_list_web">Ujenzi wa tovuti na maduka mtandaoni</li>
+          <li data-key="about_list_app">Programu za simu na wavuti</li>
+          <li data-key="about_list_security">Usalama wa mitandao na ulinzi wa data</li>
+          <li data-key="about_list_support">Huduma za matengenezo na msaada</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2 data-key="about_pride_title">Tunachojivunia</h2>
+      <p class="section-intro" data-key="about_pride_intro">Timu yetu inafuata ubora, uwazi, na utendaji wa hali ya juu
+        kila wakati.</p>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <i class="fas fa-project-diagram"></i>
+        <h3 data-key="about_pride1_title">Miradi 50+</h3>
+        <p data-key="about_pride1_desc">Tumezaa miradi ya tovuti, apps, na mitandao kwa wateja mbalimbali.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-headset"></i>
+        <h3 data-key="about_pride2_title">Msaada 24/7</h3>
+        <p data-key="about_pride2_desc">Tunaongoza wateja kupitia ushauri, utekelezaji na matengenezo ya haraka.</p>
+      </div>
+      <div class="hero-card">
+        <i class="fas fa-award"></i>
+        <h3 data-key="about_pride3_title">Uzoefu wa biashara</h3>
+        <p data-key="about_pride3_desc">Tunafanyia kazi biashara kwa taaluma, ukijali muonekano na utendaji.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p data-key="footer_text">&copy; 2026 MarkTechHub.</p>
   </footer>
-  
-   <script>
-     function toggleMenu() {
+
+  <script>
+    function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('show');
     }
-   </script>
+  </script>
+  <script src="languages/language.js"></script>
 </body>
+
 </html>
