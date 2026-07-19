@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Chat | MarkTechHub</title>
+    <meta http-equiv="refresh" content="0;url=chat.php">
+    <title>Redirecting to Chat | MarkTechHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         .chat-page {
@@ -100,6 +102,14 @@
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
         }
 
+        .message .sender {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
         .message.user {
             background: #ff7e1b;
             color: #0f172a;
@@ -165,6 +175,19 @@
             color: #0f172a;
         }
 
+        .chat-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 126, 27, 0.15);
+            color: #ff7e1b;
+            box-shadow: 0 10px 20px rgba(255, 126, 27, 0.18);
+            margin-bottom: 10px;
+        }
+
         .chat-input-row button {
             min-height: 54px;
             padding: 16px 22px;
@@ -174,10 +197,18 @@
             color: #0f172a;
             font-weight: 700;
             transition: transform 150ms ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .chat-input-row button:hover {
             transform: translateY(-1px);
+        }
+
+        .chat-input-row button i {
+            font-size: 1rem;
         }
 
         .chat-note {
@@ -220,79 +251,6 @@
             }
         }
     </style>
-
-    .chat-input-row button {
-    width: 100%;
-    min-height: 54px;
-    padding: 16px 18px;
-    border-radius: 28px;
-    background: #ff7e1b;
-    border: none;
-    color: #0f172a;
-    font-weight: 700;
-    transition: transform 150ms ease;
-    }
-
-    .chat-input-row button:hover {
-    transform: translateY(-1px);
-    }
-
-    .chat-input-row button {
-    width: 100%;
-    min-height: 54px;
-    padding: 16px 18px;
-    border-radius: 28px;
-    background: #ff7e1b;
-    border: none;
-    color: #0f172a;
-    font-weight: 700;
-    transition: transform 150ms ease;
-    }
-
-    .chat-input-row button:hover {
-    transform: translateY(-1px);
-    }
-
-    .chat-note {
-    margin-top: 12px;
-    color: rgba(226, 232, 240, 0.8);
-    font-size: 0.95rem;
-    }
-
-    @media (min-width: 760px) {
-    .chat-input-row {
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    }
-
-    .chat-input-row button {
-    width: auto;
-    }
-    }
-
-    @media (max-width: 640px) {
-    .chat-page {
-    padding: 16px;
-    }
-
-    .chat-box {
-    padding: 18px;
-    }
-
-    .message {
-    max-width: 100%;
-    }
-
-    .chat-header {
-    flex-direction: column;
-    align-items: flex-start;
-    }
-
-    .chat-input-row {
-    gap: 10px;
-    }
-    }
-    </style>
 </head>
 
 <body>
@@ -325,6 +283,7 @@
                     <div class="chat-title">
                         <div class="chat-avatar">MH</div>
                         <div>
+                            <div class="chat-icon"><i class="fas fa-comments"></i></div>
                             <h1>Live Chat</h1>
                             <p>Wasiliana nasi kwa haraka kama kwenye Facebook Messenger.</p>
                         </div>
@@ -338,7 +297,7 @@
                     <div class="chat-input-row">
                         <input id="chatInput" type="text" placeholder="Andika ujumbe wako hapa..."
                             aria-label="Chat message">
-                        <button id="sendChatBtn">Tuma</button>
+                        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i> Tuma</button>
                     </div>
                 </div>
             </div>
@@ -390,20 +349,37 @@
         const chatInput = document.getElementById('chatInput');
         const sendChatBtn = document.getElementById('sendChatBtn');
 
-        function appendMessage(text, sender) {
+        function appendMessage(text, sender, label = '') {
             const message = document.createElement('div');
             message.className = `message ${sender}`;
-            message.textContent = text;
+            if (label) {
+                const senderLabel = document.createElement('span');
+                senderLabel.className = 'sender';
+                senderLabel.textContent = label;
+                message.appendChild(senderLabel);
+            }
+            const messageText = document.createElement('span');
+            messageText.textContent = text;
+            message.appendChild(messageText);
             chatHistory.appendChild(message);
             chatHistory.scrollTop = chatHistory.scrollHeight;
         }
 
+        function loadSampleConversation() {
+            appendMessage('Habari! Ninawezaje kukusaidia leo?', 'bot', 'Mteja');
+            appendMessage('Nahitaji tovuti mpya kwa biashara yangu.', 'user', 'Mimi');
+            appendMessage('Nzuri! Tunaweza kukuandalia tovuti inayofanya kazi kwenye simu na kompyuta.', 'bot', 'Mteja');
+            appendMessage('Ni kiasi gani na kitu gani kinachohitaji?', 'user', 'Mimi');
+        }
+
+        loadSampleConversation();
+
         async function sendChat() {
             const text = chatInput.value.trim();
             if (!text) return;
-            appendMessage(text, 'user');
+            appendMessage(text, 'user', 'Mimi');
             chatInput.value = '';
-            appendMessage('Inatuma ujumbe... tafadhali subiri.', 'bot');
+            appendMessage('Inatuma ujumbe... tafadhali subiri.', 'bot', 'Mteja');
 
             try {
                 const res = await fetch('/ask', {

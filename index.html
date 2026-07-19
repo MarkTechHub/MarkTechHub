@@ -27,7 +27,7 @@
         <li><a href="index.html" data-key="home">home</a></li>
         <li><a href="about.html" data-key="about">about us</a></li>
         <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
-        <li><a href="chat.html">Chat</a></li>
+        <li><a href="chat.php"><i class="fas fa-comments"></i> Chat</a></li>
         <li><a href="contact.html" data-key="contact">Contact</a></li>
         <li>
           <select id="language-switcher" aria-label="Language switcher">
@@ -84,7 +84,8 @@
     </div>
   </section>
 
-  <a href="chat.html" class="btn cta-button">Live Chat</a>
+  <a href="chat.php" class="btn cta-button chat-launcher" onmousedown="triggerChatButton(this)"><i
+      class="fas fa-comments"></i> Live Chat</a>
 
   <section class="feature-section">
     <div class="section-title">
@@ -238,6 +239,11 @@
     });
 
     loadLanguage(storedLanguage);
+
+    function triggerChatButton(btn) {
+      btn.classList.add('shake');
+      setTimeout(() => btn.classList.remove('shake'), 360);
+    }
 
     const localAnswers = {
       sw: {
