@@ -27,6 +27,7 @@
         <li><a href="index.html" data-key="home">home</a></li>
         <li><a href="about.html" data-key="about">about us</a></li>
         <li><a href="port.html" data-key="portfolio">Portfolio</a></li>
+        <li><a href="chat.html">Chat</a></li>
         <li><a href="contact.html" data-key="contact">Contact</a></li>
         <li>
           <select id="language-switcher" aria-label="Language switcher">
@@ -83,22 +84,7 @@
     </div>
   </section>
 
-  <button id="techAssistantBtn" class="assistant-trigger" title="Ask Site" aria-label="Open AI assistant">As</button>
-
-  <div id="techAssistant" class="assistant hidden" role="dialog" aria-label="AI assistant">
-    <div class="assistant-header">
-      <span data-key="assistant_title">Ask Technology</span>
-      <button onclick="toggleAssistant()" aria-label="Close assistant">✖</button>
-    </div>
-
-    <div class="assistant-body">
-      <input type="text" id="questionInput" placeholder="What do you want to know about technology?"
-        data-key-placeholder="assistant_input">
-      <button onclick="askTech()" data-key="assistant_button">Ask</button>
-
-      <div id="assistantResults"></div>
-    </div>
-  </div>
+  <a href="chat.html" class="btn cta-button">Live Chat</a>
 
   <section class="feature-section">
     <div class="section-title">
@@ -252,17 +238,6 @@
     });
 
     loadLanguage(storedLanguage);
-
-    const btn = document.getElementById('techAssistantBtn');
-    const assistant = document.getElementById('techAssistant');
-    btn.onclick = toggleAssistant;
-
-    function toggleAssistant() {
-      assistant.classList.toggle('hidden');
-      if (!assistant.classList.contains('hidden')) {
-        document.getElementById('questionInput').focus();
-      }
-    }
 
     const localAnswers = {
       sw: {
